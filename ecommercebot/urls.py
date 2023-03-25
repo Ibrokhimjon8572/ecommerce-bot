@@ -21,7 +21,10 @@ from django.views.generic.base import RedirectView
 from django.conf.urls.static import static
 from django.conf import settings
 from telegram.views import index, set_webhook
+from django.contrib import admin
+from django.urls import path
 
+admin.site.site_header = 'Ecommerce Administration'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
