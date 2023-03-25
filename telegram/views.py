@@ -14,6 +14,7 @@ bot = telebot.TeleBot(BOT_TOKEN, threaded=False)
 
 # Create your views here.
 
+
 @csrf_exempt
 def set_webhook(request: HttpRequest):
     bot.remove_webhook()
@@ -23,7 +24,7 @@ def set_webhook(request: HttpRequest):
             'message': 'Only post method is allowed',
         })
 
-    body = json.loads(request.body) 
+    body = json.loads(request.body)
     return JsonResponse(status=200, data={
         'status': bot.set_webhook(f"https://{body['url']}/bot/"),
     })
@@ -35,10 +36,11 @@ def index(request: HttpRequest):
         return HttpResponse("Telegram Bot")
     if request.method == 'POST':
         update = telebot.types.Update.de_json(
-                request.body.decode("utf-8"))
+            request.body.decode("utf-8"))
         logging.info(update)
         bot.process_new_updates([update])
         return HttpResponse(status=200)
+
 
 @bot.message_handler(commands=['start'])
 def handle_start(msg: types.Message):
