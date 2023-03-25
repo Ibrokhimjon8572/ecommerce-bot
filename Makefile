@@ -3,3 +3,6 @@ run:
 
 show:
 	docker-compose ps -a
+
+stop:
+	docker-compose down
