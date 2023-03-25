@@ -4,4 +4,9 @@ from django.contrib import admin
 from .models import Category
 
 
-admin.site.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    model = Category
+    readonly_fields = ['image_preview']
+
+
+admin.site.register(Category, CategoryAdmin)
