@@ -20,7 +20,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 
 COPY --from=builder /opt/venv /opt/venv
 
-COPY ./src /app/src/
+COPY . .
 
 
 EXPOSE 8000
