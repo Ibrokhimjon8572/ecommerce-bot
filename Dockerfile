@@ -10,11 +10,11 @@ COPY ./requirements.txt ./requirements.txt
 
 RUN pip install -r requirements.txt
 
-
-
 FROM python:3.10
 
 WORKDIR /app
+
+RUN apt update && apt install -y libpq-dev
 
 ENV PATH="/opt/venv/bin:$PATH"
 
@@ -22,7 +22,9 @@ COPY --from=builder /opt/venv /opt/venv
 
 COPY . .
 
-
 EXPOSE 8000
 
-RUN uvicorn myproject.asgi:application --host 0.0.0.0 --port 8000 --reload 
+CMD python manage.py collectstatic --noinput && \
+    python manage.py makemigrations && \
+    python manage.py migrate && \
+    uvicorn ecommercebot.asgi:application --host 0.0.0.0 --port 8000 --reload 
