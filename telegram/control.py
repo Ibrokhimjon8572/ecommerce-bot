@@ -13,6 +13,7 @@ bot = telebot.TeleBot(BOT_TOKEN, threaded=False)
 
 
 class Control:
+
     def handle_start(self, msg: types.Message):
-        print("here")
+        translation.activate("ru")
         bot.send_message(msg.chat.id, _("hello_message"))
