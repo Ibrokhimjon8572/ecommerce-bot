@@ -1,4 +1,5 @@
 run:
+	make format
 	docker-compose up --build -d
 
 show:
