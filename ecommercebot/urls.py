@@ -27,7 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('bot/', index),
     path('set-webhook/', set_webhook),
-    path('', RedirectView.as_view('/admin')),
+    path('', RedirectView.as_view(url='/admin')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
