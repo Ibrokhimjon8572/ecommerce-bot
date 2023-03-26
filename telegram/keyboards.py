@@ -33,3 +33,15 @@ def categories_menu(categories: list[Category], lang):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     markup.add(*buttons, row_width=2)
     return markup
+
+
+def products_menu(products: list[Category], lang):
+    buttons = []
+    for product in products:
+        product_name = product.name_uz if lang == 'uz' else product.name_ru
+        buttons.append(types.KeyboardButton(product_name))
+
+    buttons.append(_("back"))
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    markup.add(*buttons, row_width=2)
+    return markup

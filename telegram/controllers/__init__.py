@@ -4,6 +4,7 @@ from .start import *
 from .ask_phone import *
 from .main_menu import *
 from .categories import *
+from .products import *
 from .unknown import *
 
 
@@ -17,6 +18,8 @@ def get_handler(control: Control) -> Handler:
             return MainMenuHandler(control)
         case 'categories':
             return CategoriesHandler(control)
+        case 'products':
+            return ProductsHandler(control)
 
         case other:
             return UnknownHandler(control)
@@ -30,6 +33,8 @@ def get_displayer(control: Control) -> Displayer:
             return MainMenuDisplayer(control)
         case 'categories':
             return CategoriesDisplayer(control)
+        case 'products':
+            return ProductsDisplayer(control)
 
         case other:
             return MainMenuDisplayer(control)

@@ -23,10 +23,15 @@ class Control:
         self.user_session, _ = UserSession.objects.get_or_create(user=self.user, defaults={
             "state": "start"
         })
+        self.url = "/".join(bot.get_webhook_info().url.split("/")[:-2])
         translation.activate(self.user.language)
 
     def reply(self, text, markup=None):
         bot.send_message(self.user_id, text, reply_markup=markup)
+
+    def reply_image(self, image, caption, markup=None):
+        bot.send_photo(self.user_id, image,
+                       caption=caption, reply_markup=markup)
 
 
 class Handler(ABC):
@@ -34,6 +39,7 @@ class Handler(ABC):
         self.user = control.user
         self.user_session = control.user_session
         self.reply = control.reply
+        self.reply_image = control.reply_image
 
     @abstractmethod
     def handle(self, text):
@@ -45,6 +51,8 @@ class Displayer:
         self.user = control.user
         self.user_session = control.user_session
         self.reply = control.reply
+        self.reply_image = control.reply_image
+        self.base_url = control.url
 
     @abstractmethod
     def show(self):
