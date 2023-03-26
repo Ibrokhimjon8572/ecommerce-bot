@@ -21,7 +21,7 @@ class Control:
             "username": tg_user.username,
         })
         self.user_session, _ = UserSession.objects.get_or_create(user=self.user, defaults={
-            "state": "ask_phone"
+            "state": "start"
         })
         translation.activate(self.user.language)
 

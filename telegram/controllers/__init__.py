@@ -1,5 +1,6 @@
 from telegram.control import Control, Handler, Displayer
 
+from .start import *
 from .ask_phone import *
 from .main_menu import *
 from .unknown import *
@@ -7,6 +8,8 @@ from .unknown import *
 
 def get_handler(control: Control) -> Handler:
     match control.user_session.state:
+        case 'start':
+            return StartHandler(control)
         case 'ask_phone':
             return AskPhoneHandler(control)
         case 'main_menu':
