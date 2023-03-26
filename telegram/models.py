@@ -33,7 +33,7 @@ class User(models.Model):
     name = models.CharField(max_length=30, null=True, blank=False)
 
     def __str__(self):
-        return self.name
+        return self.phone or self.name
 
 
 class UserSession(models.Model):

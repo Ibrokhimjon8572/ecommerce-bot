@@ -21,12 +21,12 @@ class Order(models.Model):
                           unique=True, primary_key=True)
     user = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True)
-    create_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(
         default='created', max_length=100, null=False, blank=False, choices=STATE_CHOICES)
 
     def __str__(self):
-        return self.user.name+" "+str(self.create_at)
+        return f'{self.user and self.user.name} at {self.created_at.strftime("%d.%m.%Y %H:%M:%S")}'
 
 
 class OrderItem(models.Model):
