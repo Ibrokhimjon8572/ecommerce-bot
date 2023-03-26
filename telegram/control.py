@@ -5,8 +5,8 @@ from telebot import types
 from django.utils import translation
 from django.utils.translation import gettext as _
 from . import keyboards
-import logging
 from .models import User, UserSession
+from abc import ABC, abstractmethod
 
 
 BOT_TOKEN = getattr(settings, "BOT_TOKEN")
@@ -25,20 +25,27 @@ class Control:
         })
         translation.activate(self.user.language)
 
-    def handle_contact(self, contact: types.Contact):
-        if self.user_session.state == "ask_phone":
-            self.user.phone = contact.phone_number
-            self.user.save()
-        self.show_main_menu()
-
-    def show_ask_phone(self):
-        self.user_session.state = "ask_phone"
-        self.user_session.save()
-        self.reply(_("hello_message"), keyboards.send_phone())
-
-    def show_main_menu(self):
-        self.user_session = "main_menu"
-        self.reply(_("main_menu"), keyboards.main_menu())
-
-    def reply(self, text, markup):
+    def reply(self, text, markup=None):
         bot.send_message(self.user_id, text, reply_markup=markup)
+
+
+class Handler(ABC):
+    def __init__(self, control: Control):
+        self.user = control.user
+        self.user_session = control.user_session
+        self.reply = control.reply
+
+    @abstractmethod
+    def handle(self, text):
+        pass
+
+
+class Displayer:
+    def __init__(self, control: Control):
+        self.user = control.user
+        self.user_session = control.user_session
+        self.reply = control.reply
+
+    @abstractmethod
+    def show(self):
+        pass

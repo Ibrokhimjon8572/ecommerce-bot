@@ -9,7 +9,7 @@ stop:
 	docker-compose down
 
 format:
-	autopep8 --in-place ./*/*.py ./*.py
+	autopep8 --in-place ./*/*.py ./*.py ./*/*/*.py
 
 messages-uz:
 	django-admin makemessages -l uz --ignore env

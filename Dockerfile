@@ -1,4 +1,4 @@
-FROM python:3.10 as builder
+FROM --platform=linux/amd64 python:3.10  as builder
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY ./requirements.txt ./requirements.txt
 
 RUN pip install -r requirements.txt
 
-FROM python:3.10
+FROM --platform=linux/amd64 python:3.10
 
 WORKDIR /app
 
