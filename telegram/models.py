@@ -8,6 +8,7 @@ LANGUAGE_CHOICES = (
 )
 
 STATE_CHOICES = (
+    ('start', 'Start'),
     ('select_language', 'Selecting language'),
     ('ask_phone', 'Waiting for phone number'),
     ('main_menu', 'Main menu'),

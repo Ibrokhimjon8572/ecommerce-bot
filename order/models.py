@@ -21,4 +21,5 @@ class Order(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE)
     create_at = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(default='created', max_length=100, null=False, blank=False, choices=STATE_CHOICES)
+    status = models.CharField(
+        default='created', max_length=100, null=False, blank=False, choices=STATE_CHOICES)
