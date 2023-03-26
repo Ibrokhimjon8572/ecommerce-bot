@@ -43,3 +43,4 @@ class UserSession(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True)
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+    amount = models.IntegerField(default=0)

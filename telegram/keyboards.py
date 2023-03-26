@@ -45,3 +45,24 @@ def products_menu(products: list[Category], lang):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     markup.add(*buttons, row_width=2)
     return markup
+
+
+def choose_keyboard():
+    markup = types.ReplyKeyboardMarkup()
+    markup.row(types.KeyboardButton(_("basket")))
+    markup.row(types.KeyboardButton(_("back")))
+    return markup
+
+
+def amount_keyboard(amount):
+    markup = types.InlineKeyboardMarkup()
+    markup.row(
+        types.InlineKeyboardButton("-", callback_data="-"),
+        types.InlineKeyboardButton(f"{amount}", callback_data="show"),
+        types.InlineKeyboardButton("+", callback_data="+"),
+    )
+    markup.add(
+        types.InlineKeyboardButton(
+            _("add to basket"), callback_data='add_to_basket')
+    )
+    return markup

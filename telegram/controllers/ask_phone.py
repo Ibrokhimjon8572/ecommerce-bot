@@ -17,15 +17,14 @@ class AskPhoneHandler(Handler):
         except ValidationError:
             return False
 
-    def handle(self, text):
-        if self.user_session.state == "ask_phone":
-            if not self.valid(text):
-                self.reply(_("invalid_phone"))
-                return
-            self.user.phone = text
-            self.user.save()
-            self.user_session.state = "main_menu"
-            self.user_session.save()
+    def handle(self, text, message_id=None):
+        if not self.valid(text):
+            self.reply(_("invalid_phone"))
+            return
+        self.user.phone = text
+        self.user.save()
+        self.user_session.state = "main_menu"
+        self.user_session.save()
 
 
 class AskPhoneDisplayer(Displayer):
