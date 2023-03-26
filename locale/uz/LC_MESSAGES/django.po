@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-26 05:46+0500\n"
+"POT-Creation-Date: 2023-03-26 10:44+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,22 +18,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: telegram/control.py:37
+#: telegram/controllers/ask_phone.py:23
+msgid "invalid_phone"
+msgstr "Telefon nomer xato"
+
+#: telegram/controllers/ask_phone.py:36
 msgid "hello_message"
 msgstr "Salom"
 
-#: telegram/control.py:41
-msgid "main_menu"
-msgstr "Menu"
+#: telegram/controllers/categories.py:15 telegram/controllers/products.py:15
+#: telegram/keyboards.py:32 telegram/keyboards.py:44
+msgid "back"
+msgstr "Ortga"
 
-#: telegram/keyboards.py:10
-msgid "send_phone_text"
-msgstr "Telefon"
+#: telegram/controllers/categories.py:22 telegram/controllers/main_menu.py:18
+#: telegram/controllers/products.py:24 telegram/controllers/unknown.py:11
+msgid "unknown"
+msgstr "Xatolik"
 
-#: telegram/keyboards.py:17
+#: telegram/controllers/categories.py:35
+msgid "categories"
+msgstr "Bo'limlar"
+
+#: telegram/controllers/main_menu.py:11 telegram/keyboards.py:18
 msgid "orders"
 msgstr "Buyurtma berish"
 
-#: telegram/keyboards.py:20
+#: telegram/controllers/main_menu.py:14 telegram/keyboards.py:21
 msgid "basket"
 msgstr "Savatcha"
+
+#: telegram/controllers/main_menu.py:26
+msgid "main_menu"
+msgstr "Menu"
+
+#: telegram/keyboards.py:11
+msgid "send_phone_text"
+msgstr "Telefon nomerni jo'natish"
