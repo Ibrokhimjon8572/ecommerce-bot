@@ -2,9 +2,7 @@ from telegram.control import Control, Handler, Displayer
 from telegram import keyboards
 
 from django.utils.translation import gettext as _
-from django.db.models import Q
-import logging
-from product.models import Product
+from order.models import OrderItem
 
 
 class AmountHandler(Handler):
@@ -23,7 +21,20 @@ class AmountHandler(Handler):
             self.user_session.save()
             return
         if text == "add_to_basket":
+            order_item, _created = OrderItem.objects.get_or_create(
+                order=self.order,
+                product=self.user_session.product,
+                defaults={
+                    "price": self.user_session.product.price,
+                }
+            )
+            order_item.amount = self.user_session.amount
+            order_item.save()
+
             self.user_session.state = 'categories'
+            self.user_session.category = None
+            self.user_session.product = None
+            self.user_session.amount = 1
             self.user_session.save()
             return
         if text == "+":

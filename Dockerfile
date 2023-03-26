@@ -24,8 +24,8 @@ COPY . .
 
 EXPOSE 8000
 
-CMD python manage.py collectstatic --noinput && \
-    python manage.py makemigrations && \
-    python manage.py migrate && \
-    make compile-language && \
+# python manage.py collectstatic --noinput && \
+#     python manage.py makemigrations && \
+#     python manage.py migrate && \
+CMD    make compile-language && \
     uvicorn ecommercebot.asgi:application --host 0.0.0.0 --port 8000 
