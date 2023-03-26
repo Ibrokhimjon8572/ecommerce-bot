@@ -32,10 +32,11 @@ class Order(models.Model):
 class OrderItem(models.Model):
     id = models.UUIDField(default=uuid.uuid4, editable=False,
                           unique=True, primary_key=True)
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    order = models.ForeignKey(
+        Order, on_delete=models.CASCADE, related_name='order_items')
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     amount = models.IntegerField(null=False, default=1)
     price = models.IntegerField(null=False, default=0)
 
     def __str__(self):
-        return self.product.name_uz
+        return f"{self.product}"
