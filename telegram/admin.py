@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User
+from .models import User, UserSession
 from order.models import Order
 
 # Register your models here.
@@ -23,7 +23,7 @@ class OrderInline(admin.StackedInline):
 class UserAdmin(admin.ModelAdmin):
     model = User
     readonly_fields = ['user_id',
-                       'username', 'phone', 'name', 'language']
+                       'username', 'phone', 'name', 'language', 'session']
     list_display = ['name', 'phone', 'username']
     search_fields = ['phone', 'username', 'name']
     inlines = [OrderInline]
@@ -32,4 +32,5 @@ class UserAdmin(admin.ModelAdmin):
         return False
 
 
+admin.site.register(UserSession)
 admin.site.register(User, UserAdmin)

@@ -2,6 +2,7 @@ from telegram.control import Control, Handler, Displayer
 from telegram import keyboards
 from django.utils.translation import gettext as _
 from django.core.validators import RegexValidator
+import logging
 from django.core.exceptions import ValidationError
 
 
@@ -20,6 +21,7 @@ class AskPhoneHandler(Handler):
     def handle(self, text, message_id=None):
         if not self.valid(text):
             self.reply(_("invalid_phone"))
+            logging.error(self.user_session)
             return
         self.user.phone = text
         self.user.save()

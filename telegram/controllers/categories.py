@@ -16,6 +16,10 @@ class CategoriesHandler(Handler):
             self.user_session.state = 'main_menu'
             self.user_session.save()
             return
+        if text == _("basket"):
+            self.user_session.state = 'basket'
+            self.user_session.save()
+            return
         category = Category.objects.filter(
             Q(name_uz=text) | Q(name_ru=text)).first()
         if category is None:

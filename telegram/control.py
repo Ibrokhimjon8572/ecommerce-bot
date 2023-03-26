@@ -35,9 +35,11 @@ class Control:
         bot.send_photo(self.user_id, image,
                        caption=caption, reply_markup=markup)
 
-    def edit_markup(self, message_id, markup):
+    def edit_markup(self, message_id, markup, text=None):
         bot.edit_message_reply_markup(
             self.user_id, message_id, reply_markup=markup)
+        if text is not None:
+            bot.edit_message_text(text, self.user_id, message_id)
 
 
 class Handler(ABC):
@@ -48,6 +50,7 @@ class Handler(ABC):
         self.reply_image = control.reply_image
         self.edit_markup = control.edit_markup
         self.order = control.order
+        self.control = control
 
     @abstractmethod
     def handle(self, text, message_id=None):
@@ -61,6 +64,7 @@ class Displayer:
         self.reply = control.reply
         self.reply_image = control.reply_image
         self.order = control.order
+        self.control = control
         self.base_url = control.url
 
     @abstractmethod
