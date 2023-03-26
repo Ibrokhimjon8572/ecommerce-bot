@@ -24,7 +24,7 @@ from telegram.views import index, set_webhook
 from django.contrib import admin
 from django.urls import path
 
-admin.site.site_header = 'Ecommerce Administration'
+admin.site.site_header = 'Fayz Baraka Metal'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
