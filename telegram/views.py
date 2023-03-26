@@ -7,10 +7,7 @@ from django.http import JsonResponse, HttpRequest, HttpResponse
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 
-from .control import Control
-
-BOT_TOKEN = getattr(settings, "BOT_TOKEN")
-bot = telebot.TeleBot(BOT_TOKEN, threaded=False)
+from .handlers import bot
 
 # Create your views here.
 
@@ -40,8 +37,3 @@ def index(request: HttpRequest):
         logging.info(update)
         bot.process_new_updates([update])
         return HttpResponse(status=200)
-
-
-@bot.message_handler(commands=['start'])
-def handle_start(msg: types.Message):
-    Control().handle_start(msg)

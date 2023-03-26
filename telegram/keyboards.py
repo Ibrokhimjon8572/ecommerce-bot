@@ -9,3 +9,14 @@ def send_phone():
     markup.add(types.KeyboardButton(
         text=_("send_phone_text"), request_contact=True))
     return markup
+
+
+def main_menu():
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    markup.add(types.KeyboardButton(
+        text=_("orders")
+    ))
+    markup.add(types.KeyboardButton(
+        text=_("basket")
+    ))
+    return markup

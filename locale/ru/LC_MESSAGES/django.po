@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-25 12:00+0000\n"
+"POT-Creation-Date: 2023-03-26 05:46+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,23 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-#: telegram/control.py:19
+
+#: telegram/control.py:37
 msgid "hello_message"
 msgstr "Привет"
+
+#: telegram/control.py:41
+msgid "main_menu"
+msgstr "Меню"
 
 #: telegram/keyboards.py:10
 msgid "send_phone_text"
 msgstr "Телефон"
+
+#: telegram/keyboards.py:17
+msgid "orders"
+msgstr "Заказ"
+
+#: telegram/keyboards.py:20
+msgid "basket"
+msgstr "Корзина"

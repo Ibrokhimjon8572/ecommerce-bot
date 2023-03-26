@@ -36,7 +36,7 @@ class Product(models.Model):
     description_ru = models.TextField(
         null=True, blank=True, max_length=300, verbose_name="Description in Russian")
     price = models.IntegerField(null=False, default=0)
-    category_id = models.ForeignKey(
+    category = models.ForeignKey(
         Category, related_name='products', on_delete=models.CASCADE)
     image = models.ImageField(blank=True, null=True)
 
