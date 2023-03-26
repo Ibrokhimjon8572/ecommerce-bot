@@ -6,7 +6,7 @@ from .models import User
 
 class UserAdmin(admin.ModelAdmin):
     model = User
-    readonly_fields = ['user_id',
+    readonly_fields = ['user',
                        'username', 'phone', 'name', 'language']
     list_display = ['name', 'phone', 'username']
 
