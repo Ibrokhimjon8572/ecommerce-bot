@@ -11,7 +11,7 @@ class CategoriesHandler(Handler):
     def __init__(self, control: Control):
         super().__init__(control)
 
-    def handle(self, text):
+    def handle(self, text, message_id=None):
         if text == _("back"):
             self.user_session.state = 'main_menu'
             self.user_session.save()

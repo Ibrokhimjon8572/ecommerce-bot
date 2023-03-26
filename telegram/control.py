@@ -4,8 +4,8 @@ import telebot
 from telebot import types
 from django.utils import translation
 from django.utils.translation import gettext as _
-from . import keyboards
 from .models import User, UserSession
+from order.models import Order
 from abc import ABC, abstractmethod
 
 
@@ -24,6 +24,8 @@ class Control:
             "state": "start"
         })
         self.url = "/".join(bot.get_webhook_info().url.split("/")[:-2])
+        self.order, _ = Order.objects.get_or_create(
+            user=self.user, status='created')
         translation.activate(self.user.language)
 
     def reply(self, text, markup=None):
@@ -33,6 +35,10 @@ class Control:
         bot.send_photo(self.user_id, image,
                        caption=caption, reply_markup=markup)
 
+    def edit_markup(self, message_id, markup):
+        bot.edit_message_reply_markup(
+            self.user_id, message_id, reply_markup=markup)
+
 
 class Handler(ABC):
     def __init__(self, control: Control):
@@ -40,9 +46,11 @@ class Handler(ABC):
         self.user_session = control.user_session
         self.reply = control.reply
         self.reply_image = control.reply_image
+        self.edit_markup = control.edit_markup
+        self.order = control.order
 
     @abstractmethod
-    def handle(self, text):
+    def handle(self, text, message_id=None):
         pass
 
 
@@ -52,6 +60,7 @@ class Displayer:
         self.user_session = control.user_session
         self.reply = control.reply
         self.reply_image = control.reply_image
+        self.order = control.order
         self.base_url = control.url
 
     @abstractmethod

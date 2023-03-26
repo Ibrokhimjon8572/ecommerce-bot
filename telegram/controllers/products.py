@@ -11,7 +11,7 @@ class ProductsHandler(Handler):
     def __init__(self, control: Control):
         super().__init__(control)
 
-    def handle(self, text):
+    def handle(self, text, message_id=None):
         if text == _("back"):
             self.user_session.state = 'categories'
             self.user_session.category = None
@@ -25,7 +25,9 @@ class ProductsHandler(Handler):
             return
         self.user_session.product = product
         self.user_session.state = 'amount'
+        self.user_session.amount = 1
         self.user_session.save()
+        self.reply(_("choose"), keyboards.choose_keyboard())
 
 
 class ProductsDisplayer(Displayer):
@@ -40,6 +42,6 @@ class ProductsDisplayer(Displayer):
         keyboard = keyboards.products_menu(products, self.user.language)
         if category.image.url:
             self.reply_image(
-                self.base_url + category.image.url, caption, keyboard)
+                self.base_url + category.image.url, caption or name, keyboard)
         else:
             self.reply(caption or name, keyboard)
