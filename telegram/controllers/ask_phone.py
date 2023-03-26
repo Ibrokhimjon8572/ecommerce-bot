@@ -1,6 +1,8 @@
 from telegram.control import Control, Handler, Displayer
 from telegram import keyboards
 from django.utils.translation import gettext as _
+from django.core.validators import RegexValidator
+from django.core.exceptions import ValidationError
 
 
 class AskPhoneHandler(Handler):
@@ -8,8 +10,12 @@ class AskPhoneHandler(Handler):
         super().__init__(control)
 
     def valid(self, phone):
-        # TODO: add phone validator
-        return True
+        reg = RegexValidator(regex=r'^\+?998?\d{9}$', message="Not valid")
+        try:
+            reg(phone)
+            return True
+        except ValidationError:
+            return False
 
     def handle(self, text):
         if self.user_session.state == "ask_phone":

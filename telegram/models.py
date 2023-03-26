@@ -1,6 +1,7 @@
 import uuid
 
 from django.db import models
+from product.models import Category, Product
 
 LANGUAGE_CHOICES = (
     ('uz', "O'zbek"),
@@ -8,6 +9,7 @@ LANGUAGE_CHOICES = (
 )
 
 STATE_CHOICES = (
+    ('start', 'Start'),
     ('select_language', 'Selecting language'),
     ('ask_phone', 'Waiting for phone number'),
     ('main_menu', 'Main menu'),
@@ -38,3 +40,6 @@ class UserSession(models.Model):
     user = models.OneToOneField(
         User, related_name='session', on_delete=models.CASCADE)
     state = models.CharField(max_length=50, null=False, choices=STATE_CHOICES)
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL, null=True)
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
