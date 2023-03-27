@@ -90,3 +90,9 @@ def settings_keyboard():
     markup.add(_("change_language"))
     markup.add(_("back"))
     return markup
+
+
+def choose_language():
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    markup.row(_("uz"), _("ru"))
+    return markup

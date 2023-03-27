@@ -3,7 +3,6 @@ from telegram import keyboards
 
 from django.utils.translation import gettext as _
 from django.db.models import Q
-import logging
 from product.models import Product
 
 
