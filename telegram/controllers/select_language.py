@@ -33,4 +33,4 @@ class SelectLanguageDisplayer(Displayer):
         super().__init__(control)
 
     def show(self):
-        self.reply(_("choose_action"), keyboards.choose_language())
+        self.reply(_("choose_language"), keyboards.choose_language())
