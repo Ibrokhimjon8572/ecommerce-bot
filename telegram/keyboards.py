@@ -96,3 +96,10 @@ def choose_language():
     markup.row(_("uz"), _("ru"))
     markup.row(_("back"))
     return markup
+
+
+def send_location():
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    markup.add(types.KeyboardButton(_("location"), request_location=True))
+    markup.add(_("back"))
+    return markup
