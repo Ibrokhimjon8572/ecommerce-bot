@@ -8,6 +8,7 @@ from .products import *
 from .amount import *
 from .basket import *
 from .settings import *
+from .select_language import *
 from .unknown import *
 
 
@@ -29,6 +30,8 @@ def get_handler(control: Control) -> Handler:
             return BasketHandler(control)
         case 'settings':
             return SettingsHandler(control)
+        case 'select_language':
+            return SelectLanguageHandler(control)
 
         case other:
             return UnknownHandler(control)
@@ -50,6 +53,8 @@ def get_displayer(control: Control) -> Displayer:
             return BasketDisplayer(control)
         case 'settings':
             return SettingsDisplayer(control)
+        case 'select_language':
+            return SelectLanguageDisplayer(control)
 
         case other:
             return MainMenuDisplayer(control)

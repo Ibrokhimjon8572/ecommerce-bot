@@ -1,4 +1,3 @@
-import telebot
 
 from telebot import types
 from django.utils.translation import gettext as _
@@ -95,4 +94,5 @@ def settings_keyboard():
 def choose_language():
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     markup.row(_("uz"), _("ru"))
+    markup.row(_("back"))
     return markup

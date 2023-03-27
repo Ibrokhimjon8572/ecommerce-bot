@@ -10,7 +10,7 @@ stop:
 
 format:
 	autopep8 --in-place ./*/*.py ./*.py ./*/*/*.py
-	autoflake --in-place --remove-unused-variables ./*/*.py ./*.py ./*/*/*.py
+	autoflake --in-place --remove-unused-variables --remove-all-unused-imports ./*/*.py ./*.py ./*/*/*.py
 
 messages-uz:
 	django-admin makemessages -l uz --ignore env

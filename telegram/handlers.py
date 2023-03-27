@@ -1,5 +1,5 @@
 from telebot import types
-from .control import bot, Control, Handler, Displayer
+from .control import bot, Control
 from .controllers import get_handler, get_displayer
 
 
