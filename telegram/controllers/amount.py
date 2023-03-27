@@ -56,8 +56,8 @@ class AmountDisplayer(Displayer):
         product = self.user_session.product
         description = product.description_ru if self.user.language == "ru" else product.description_uz
         name = product.name_ru if self.user.language == "ru" else product.name_uz
-        caption = _("%(description)s Price: %(price)d" %
-                    {"description": description or name, "price": product.price})
+        caption = _("%(description)s Price: %(price)d") % {
+            "description": description or name, "price": product.price}
         keyboard = keyboards.amount_keyboard(self.user_session.amount)
         if product.image and product.image.url:
             self.reply_image(

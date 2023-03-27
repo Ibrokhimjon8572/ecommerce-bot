@@ -12,10 +12,10 @@ def generate_text(items, lang):
     price = 0
     for item in items:
         name = item.product.name_uz if lang == 'uz' else item.product.name_ru
-        text += _("%(name)s x %(amount)d \n" %
-                  {"name": name, "amount": item.amount})
+        text += _("%(name)s x %(amount)d \n") % {
+            "name": name, "amount": item.amount}
         price += item.price * item.amount
-    text += _("total: %(price)d so'm" % {"price": price})
+    text += _("total: %(price)d so'm") % {"price": price}
     return text
 
 

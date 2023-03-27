@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-26 10:44+0500\n"
+"POT-Creation-Date: 2023-03-27 18:21+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,40 +18,144 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: telegram/controllers/amount.py:13 telegram/controllers/categories.py:15
+#: telegram/controllers/order.py:12 telegram/controllers/products.py:14
+#: telegram/controllers/select_language.py:12
+#: telegram/controllers/settings.py:11 telegram/keyboards.py:31
+#: telegram/keyboards.py:41 telegram/keyboards.py:51 telegram/keyboards.py:71
+#: telegram/keyboards.py:90 telegram/keyboards.py:97 telegram/keyboards.py:104
+msgid "back"
+msgstr "Ortga"
+
+#: telegram/controllers/amount.py:19 telegram/controllers/basket.py:66
+#: telegram/controllers/categories.py:19 telegram/controllers/main_menu.py:14
+#: telegram/controllers/products.py:19 telegram/keyboards.py:18
+#: telegram/keyboards.py:31 telegram/keyboards.py:42 telegram/keyboards.py:50
+msgid "basket"
+msgstr "Savatcha"
+
+#: telegram/controllers/amount.py:59
+#, python-format
+msgid "%(description)s Price: %(price)d"
+msgstr ""
+
 #: telegram/controllers/ask_phone.py:23
 msgid "invalid_phone"
 msgstr "Telefon nomer xato"
 
-#: telegram/controllers/ask_phone.py:36
+#: telegram/controllers/ask_phone.py:37
 msgid "hello_message"
 msgstr "Salom"
 
-#: telegram/controllers/categories.py:15 telegram/controllers/products.py:15
-#: telegram/keyboards.py:32 telegram/keyboards.py:44
-msgid "back"
-msgstr "Ortga"
+#: telegram/controllers/basket.py:11
+msgid "products:\n"
+msgstr ""
 
-#: telegram/controllers/categories.py:22 telegram/controllers/main_menu.py:18
-#: telegram/controllers/products.py:24 telegram/controllers/unknown.py:11
+#: telegram/controllers/basket.py:15
+#, python-format
+msgid "%(name)s x %(amount)d \n"
+msgstr ""
+
+#: telegram/controllers/basket.py:18
+#, python-format
+msgid "total: %(price)d so'm"
+msgstr ""
+
+#: telegram/controllers/basket.py:36
+msgid "basked cleared"
+msgstr ""
+
+#: telegram/controllers/basket.py:53 telegram/controllers/basket.py:71
+#, fuzzy
+#| msgid "basket"
+msgid "empty basket"
+msgstr "Savatcha"
+
+#: telegram/controllers/basket.py:74 telegram/controllers/main_menu.py:29
+msgid "main_menu"
+msgstr "Menu"
+
+#: telegram/controllers/categories.py:26 telegram/controllers/main_menu.py:21
+#: telegram/controllers/order.py:17 telegram/controllers/products.py:27
+#: telegram/controllers/unknown.py:10
 msgid "unknown"
 msgstr "Xatolik"
 
-#: telegram/controllers/categories.py:35
+#: telegram/controllers/categories.py:39
 msgid "categories"
 msgstr "Bo'limlar"
 
-#: telegram/controllers/main_menu.py:11 telegram/keyboards.py:18
+#: telegram/controllers/main_menu.py:11 telegram/keyboards.py:17
 msgid "orders"
 msgstr "Buyurtma berish"
 
-#: telegram/controllers/main_menu.py:14 telegram/keyboards.py:21
-msgid "basket"
-msgstr "Savatcha"
+#: telegram/controllers/main_menu.py:17 telegram/keyboards.py:19
+msgid "settings"
+msgstr ""
 
-#: telegram/controllers/main_menu.py:26
-msgid "main_menu"
-msgstr "Menu"
+#: telegram/controllers/order.py:22
+msgid "order_accepted"
+msgstr ""
+
+#: telegram/controllers/order.py:33
+msgid "send location"
+msgstr ""
+
+#: telegram/controllers/products.py:33
+msgid "choose"
+msgstr ""
+
+#: telegram/controllers/select_language.py:16 telegram/keyboards.py:96
+msgid "uz"
+msgstr ""
+
+#: telegram/controllers/select_language.py:20 telegram/keyboards.py:96
+msgid "ru"
+msgstr ""
+
+#: telegram/controllers/select_language.py:26
+msgid "ready"
+msgstr ""
+
+#: telegram/controllers/select_language.py:36
+msgid "choose_language"
+msgstr ""
+
+#: telegram/controllers/settings.py:15 telegram/keyboards.py:89
+msgid "change_language"
+msgstr ""
+
+#: telegram/controllers/settings.py:25
+msgid "choose_action"
+msgstr ""
 
 #: telegram/keyboards.py:11
 msgid "send_phone_text"
 msgstr "Telefon nomerni jo'natish"
+
+#: telegram/keyboards.py:64
+#, fuzzy
+#| msgid "basket"
+msgid "add to basket"
+msgstr "Savatcha"
+
+#: telegram/keyboards.py:72
+#, fuzzy
+#| msgid "orders"
+msgid "order"
+msgstr "Buyurtma berish"
+
+#: telegram/keyboards.py:73
+#, fuzzy
+#| msgid "basket"
+msgid "clear basket"
+msgstr "Savatcha"
+
+#: telegram/keyboards.py:78
+#, python-format
+msgid "delete %(name)s"
+msgstr ""
+
+#: telegram/keyboards.py:103
+msgid "location"
+msgstr ""

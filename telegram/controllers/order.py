@@ -21,6 +21,7 @@ class OrderHandler(Handler):
             self.user_session.save()
             self.reply(_("order_accepted"))
             self.order.status = 'pending'
+            self.order.save()
 
             # TODO: send order to admin group
 
