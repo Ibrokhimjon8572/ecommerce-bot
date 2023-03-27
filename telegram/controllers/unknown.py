@@ -1,5 +1,4 @@
-from telegram.control import Control, Handler, Displayer
-from telegram import keyboards
+from telegram.control import Control, Handler
 from django.utils.translation import gettext as _
 
 

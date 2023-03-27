@@ -3,7 +3,6 @@ from django.conf import settings
 import telebot
 from telebot import types
 from django.utils import translation
-from django.utils.translation import gettext as _
 from .models import User, UserSession
 from order.models import Order
 from abc import ABC, abstractmethod

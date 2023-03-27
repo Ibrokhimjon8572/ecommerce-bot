@@ -1,10 +1,8 @@
 import logging
 import json
 import telebot
-from telebot import types
 
 from django.http import JsonResponse, HttpRequest, HttpResponse
-from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 
 from .handlers import bot

@@ -1,9 +1,6 @@
 from telegram.control import Control, Handler, Displayer
 from telegram import keyboards
 from django.utils.translation import gettext as _
-from django.core.validators import RegexValidator
-import logging
-from django.core.exceptions import ValidationError
 
 
 class SettingsHandler(Handler):
