@@ -11,7 +11,7 @@ class OrderHandler(Handler):
     def handle(self, msg, message_id=None):
         if type(msg) == str and msg == _("back"):
             self.user_session.state = 'basket'
-            self.user_session.state.save()
+            self.user_session.save()
             return
         if type(msg) == str:
             self.reply(_("unknown"))
