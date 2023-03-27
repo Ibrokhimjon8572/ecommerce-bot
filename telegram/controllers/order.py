@@ -1,6 +1,7 @@
 from telegram.control import Control, Handler, Displayer
 from telegram import keyboards
 from django.utils.translation import gettext as _
+from telebot import types
 
 
 class OrderHandler(Handler):
@@ -15,7 +16,14 @@ class OrderHandler(Handler):
         if type(msg) == str:
             self.reply(_("unknown"))
             return
-        # TODO: handle location
+        if type(msg) == types.Location:
+            self.user_session.state = 'main_menu'
+            self.user_session.save()
+            self.reply(_("order_accepted"))
+            self.order.status = 'pending'
+
+            # TODO: send order to admin group
+
 
 class OrderDisplayer(Displayer):
     def __init__(self, control: Control):
