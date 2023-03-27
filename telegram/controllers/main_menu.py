@@ -14,6 +14,9 @@ class MainMenuHandler(Handler):
         elif text == _("basket"):
             self.user_session.state = 'basket'
             self.user_session.save()
+        elif text == _("settings"):
+            self.user_session.state = 'settings'
+            self.user_session.save()
         else:
             self.reply(_("unknown"))
 

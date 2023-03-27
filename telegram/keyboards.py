@@ -15,12 +15,9 @@ def send_phone():
 
 def main_menu():
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.add(types.KeyboardButton(
-        text=_("orders")
-    ))
-    markup.add(types.KeyboardButton(
-        text=_("basket")
-    ))
+    markup.add(_("orders"))
+    markup.add(_("basket"))
+    markup.add(_("settings"))
     return markup
 
 
@@ -30,10 +27,9 @@ def categories_menu(categories: list[Category], lang):
         category_name = category.name_uz if lang == 'uz' else category.name_ru
         buttons.append(types.KeyboardButton(category_name))
 
-    buttons.append(_("back"))
-    buttons.append(_("basket"))
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     markup.add(*buttons, row_width=2)
+    markup.row(_("basket"), _("back"))
     return markup
 
 
@@ -86,4 +82,11 @@ def basket_keyboard(items: list[OrderItem], lang):
 
     markup = types.InlineKeyboardMarkup()
     markup.add(*buttons, row_width=1)
+    return markup
+
+
+def settings_keyboard():
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    markup.add(_("change_language"))
+    markup.add(_("back"))
     return markup

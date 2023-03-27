@@ -18,6 +18,7 @@ STATE_CHOICES = (
     ('amount', 'Choosing amount'),
     ('basket', 'Basket'),
     ('order', 'Ordering'),
+    ('settings', 'Settings'),
 )
 
 

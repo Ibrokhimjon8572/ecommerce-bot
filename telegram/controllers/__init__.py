@@ -7,6 +7,7 @@ from .categories import *
 from .products import *
 from .amount import *
 from .basket import *
+from .settings import *
 from .unknown import *
 
 
@@ -26,6 +27,8 @@ def get_handler(control: Control) -> Handler:
             return AmountHandler(control)
         case 'basket':
             return BasketHandler(control)
+        case 'settings':
+            return SettingsHandler(control)
 
         case other:
             return UnknownHandler(control)
@@ -45,6 +48,8 @@ def get_displayer(control: Control) -> Displayer:
             return AmountDisplayer(control)
         case 'basket':
             return BasketDisplayer(control)
+        case 'settings':
+            return SettingsDisplayer(control)
 
         case other:
             return MainMenuDisplayer(control)
