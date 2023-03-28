@@ -58,7 +58,7 @@ msgstr "Продукты:\n"
 #: telegram/controllers/basket.py:15
 #, python-format
 msgid "%(name)s x %(amount)d \n"
-msgstr " %(name)s x %(amount)d\n"
+msgstr "    %(amount)d X %(name)s\n"
 
 #: telegram/controllers/basket.py:18
 #, python-format

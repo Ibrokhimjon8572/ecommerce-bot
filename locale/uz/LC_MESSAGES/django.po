@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-27 18:21+0500\n"
+"POT-Creation-Date: 2023-03-28 06:06+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,8 @@ msgstr "Savatcha"
 #, python-format
 msgid "%(description)s Price: %(price)d"
 msgstr ""
+"%(description)s\n"
+"Narxi: %(price)d so'm"
 
 #: telegram/controllers/ask_phone.py:23
 msgid "invalid_phone"
@@ -49,27 +51,25 @@ msgstr "Salom"
 
 #: telegram/controllers/basket.py:11
 msgid "products:\n"
-msgstr ""
+msgstr "Tovarlar:\n"
 
 #: telegram/controllers/basket.py:15
 #, python-format
 msgid "%(name)s x %(amount)d \n"
-msgstr ""
+msgstr "    %(amount)d ta -- %(name)s\n"
 
 #: telegram/controllers/basket.py:18
 #, python-format
 msgid "total: %(price)d so'm"
-msgstr ""
+msgstr "Umumiy narxi: %(price)d so'm"
 
 #: telegram/controllers/basket.py:36
 msgid "basked cleared"
-msgstr ""
+msgstr "Savatcha tozalandi"
 
 #: telegram/controllers/basket.py:53 telegram/controllers/basket.py:71
-#, fuzzy
-#| msgid "basket"
 msgid "empty basket"
-msgstr "Savatcha"
+msgstr "Savatcha bo'sh"
 
 #: telegram/controllers/basket.py:74 telegram/controllers/main_menu.py:29
 msgid "main_menu"
@@ -91,71 +91,65 @@ msgstr "Buyurtma berish"
 
 #: telegram/controllers/main_menu.py:17 telegram/keyboards.py:19
 msgid "settings"
-msgstr ""
+msgstr "Sozlamalar"
 
 #: telegram/controllers/order.py:22
 msgid "order_accepted"
-msgstr ""
+msgstr "Buyurtma qabul qilindi"
 
-#: telegram/controllers/order.py:33
+#: telegram/controllers/order.py:34
 msgid "send location"
-msgstr ""
+msgstr "Lokatsiya jo'nating"
 
 #: telegram/controllers/products.py:33
 msgid "choose"
-msgstr ""
+msgstr "Tanlang"
 
 #: telegram/controllers/select_language.py:16 telegram/keyboards.py:96
 msgid "uz"
-msgstr ""
+msgstr "O'zbekcha"
 
 #: telegram/controllers/select_language.py:20 telegram/keyboards.py:96
 msgid "ru"
-msgstr ""
+msgstr "Русский"
 
 #: telegram/controllers/select_language.py:26
 msgid "ready"
-msgstr ""
+msgstr "Tayyor"
 
 #: telegram/controllers/select_language.py:36
 msgid "choose_language"
-msgstr ""
+msgstr "Tilni tanlang"
 
 #: telegram/controllers/settings.py:15 telegram/keyboards.py:89
 msgid "change_language"
-msgstr ""
+msgstr "Tilni o'zgartirish"
 
 #: telegram/controllers/settings.py:25
 msgid "choose_action"
-msgstr ""
+msgstr "Amalni tanlang"
 
 #: telegram/keyboards.py:11
 msgid "send_phone_text"
 msgstr "Telefon nomerni jo'natish"
 
 #: telegram/keyboards.py:64
-#, fuzzy
-#| msgid "basket"
 msgid "add to basket"
-msgstr "Savatcha"
+msgstr "Savatchaga qo'shish"
 
 #: telegram/keyboards.py:72
-#, fuzzy
-#| msgid "orders"
 msgid "order"
 msgstr "Buyurtma berish"
 
 #: telegram/keyboards.py:73
-#, fuzzy
-#| msgid "basket"
 msgid "clear basket"
-msgstr "Savatcha"
+msgstr "Savatchani tozalash"
 
 #: telegram/keyboards.py:78
 #, python-format
 msgid "delete %(name)s"
-msgstr ""
+msgstr "❌ %(name)s"
 
 #: telegram/keyboards.py:103
 msgid "location"
-msgstr ""
+msgstr "Lokatsiya jo'natish"
