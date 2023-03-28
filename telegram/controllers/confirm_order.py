@@ -15,6 +15,7 @@ class ConfirmOrderHandler(Handler):
             text += f"{item.product.name_uz} -- {item.amount}\n"
             price += item.price * item.amount
         text += f"Umumiy: {price} so'm\n"
+        text += f"Izoh: {self.user_session.comment}"
         return text
 
     def handle(self, text, message_id=None):
@@ -27,8 +28,6 @@ class ConfirmOrderHandler(Handler):
 
             self.reply_group(self.generate_text(),
                              keyboards.admin_order(self.order.id), self.user_session.lat, self.user_session.long)
-
-            # send order to admins group
 
             return
         if text == _("no"):

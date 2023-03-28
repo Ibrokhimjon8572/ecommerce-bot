@@ -20,7 +20,10 @@ class AmountHandler(Handler):
             self.user_session.state = 'basket'
             self.user_session.save()
             return
-        if text == "add_to_basket":
+        try:
+            amount = int(text)
+            if amount <= 0:
+                raise ValueError()
             order_item, _created = OrderItem.objects.get_or_create(
                 order=self.order,
                 product=self.user_session.product,
@@ -28,24 +31,15 @@ class AmountHandler(Handler):
                     "price": self.user_session.product.price,
                 }
             )
-            order_item.amount = self.user_session.amount
+            order_item.amount = amount
             order_item.save()
-
+            self.reply(_("added to basket"))
             self.user_session.state = 'categories'
             self.user_session.category = None
             self.user_session.product = None
-            self.user_session.amount = 1
             self.user_session.save()
-            return
-        if text == "+":
-            self.user_session.amount += 1
-            self.user_session.save()
-        if text == "-":
-            self.user_session.amount = max(self.user_session.amount-1, 1)
-            self.user_session.save()
-        if message_id:
-            self.edit_markup(message_id, keyboards.amount_keyboard(
-                self.user_session.amount))
+        except:
+            self.reply(_("invalid number"))
 
 
 class AmountDisplayer(Displayer):
@@ -58,9 +52,10 @@ class AmountDisplayer(Displayer):
         name = product.name_ru if self.user.language == "ru" else product.name_uz
         caption = _("%(description)s Price: %(price)d") % {
             "description": description or name, "price": product.price}
-        keyboard = keyboards.amount_keyboard(self.user_session.amount)
         if product.image and product.image.url:
             self.reply_image(
-                self.base_url + product.image.url, caption, keyboard)
+                self.base_url + product.image.url, caption, None)
         else:
-            self.reply(caption, keyboard)
+            self.reply(caption, None)
+
+        self.reply(_("choose"), keyboards.choose_keyboard())

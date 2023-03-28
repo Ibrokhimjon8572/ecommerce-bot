@@ -12,6 +12,7 @@ from .select_language import *
 from .order import *
 from .confirm_order import *
 from .group_handler import *
+from .send_comment import *
 from .unknown import *
 
 
@@ -41,6 +42,8 @@ def get_handler(control: Control, from_group=False) -> Handler:
             return OrderHandler(control)
         case 'confirm_order':
             return ConfirmOrderHandler(control)
+        case 'send_comment':
+            return SendCommentHandler(control)
 
         case other:
             return UnknownHandler(control)
@@ -68,6 +71,8 @@ def get_displayer(control: Control) -> Displayer:
             return OrderDisplayer(control)
         case 'confirm_order':
             return ConfirmOrderDisplayer(control)
+        case 'send_comment':
+            return SendCommentDisplayer(control)
 
         case other:
             return MainMenuDisplayer(control)

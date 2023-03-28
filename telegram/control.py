@@ -37,9 +37,12 @@ class Control:
                        caption=caption, reply_markup=markup)
 
     def reply_group(self, text, markup, lat, long):
-        msg = bot.send_location(ADMIN_GROUP, lat, long)
+        if lat and long:
+            msg = bot.send_location(ADMIN_GROUP, lat, long)
+        else:
+            msg = None
         bot.send_message(ADMIN_GROUP, text, reply_markup=markup,
-                         reply_to_message_id=msg.id)
+                         reply_to_message_id=msg and msg.id)
 
     def edit_markup(self, message_id, markup, text=None):
         bot.edit_message_reply_markup(
