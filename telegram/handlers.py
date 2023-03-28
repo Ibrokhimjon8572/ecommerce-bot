@@ -5,6 +5,8 @@ from .controllers import get_handler, get_displayer
 
 @bot.message_handler(commands=['start'])
 def handle_start(msg: types.Message):
+    if msg.from_user.id != msg.chat.id:
+        return
     control = Control(msg.from_user)
     control.user_session.state = 'main_menu'
     if not control.user.phone:
@@ -16,6 +18,8 @@ def handle_start(msg: types.Message):
 
 @bot.message_handler(content_types=['contact'])
 def handle_contact(msg: types.Message):
+    if msg.from_user.id != msg.chat.id:
+        return
     control = Control(msg.from_user)
     get_handler(control).handle(msg.contact.phone_number)
     get_displayer(control).show()
@@ -23,6 +27,8 @@ def handle_contact(msg: types.Message):
 
 @bot.message_handler(content_types=['text'])
 def handle_text(msg: types.Message):
+    if msg.from_user.id != msg.chat.id:
+        return
     control = Control(msg.from_user)
     if not control.user.phone and control.user_session.state != 'ask_phone':
         control.user_session.state = 'start'
@@ -35,6 +41,10 @@ def handle_text(msg: types.Message):
 def handle_callback_query(cq: types.CallbackQuery):
     bot.answer_callback_query(cq.id)
     control = Control(cq.from_user)
+    if cq.from_user.id != cq.message.chat.id:
+        get_handler(control, from_group=True).handle(cq)
+        return
+
     old_state = control.user_session.state
     get_handler(control).handle(cq.data, cq.message.id)
     if control.user_session.state != old_state:

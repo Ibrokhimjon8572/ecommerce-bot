@@ -16,6 +16,7 @@ bot = telebot.TeleBot(BOT_TOKEN, threaded=False)
 class Control:
     def __init__(self, tg_user: types.User):
         self.user_id = tg_user.id
+        self.bot = bot
         self.user, _ = User.objects.get_or_create(user_id=tg_user.id, defaults={
             "name": f"{tg_user.first_name} {tg_user.last_name or ''}",
             "username": tg_user.username,
