@@ -15,6 +15,9 @@ class SettingsHandler(Handler):
         if text == _("change_language"):
             self.user_session.state = 'select_language'
             self.user_session.save()
+        if text == _("change_phone"):
+            self.user_session.state = 'ask_phone'
+            self.user_session.save()
 
 
 class SettingsDisplayer(Displayer):

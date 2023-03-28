@@ -38,15 +38,14 @@ def products_menu(products: list[Category], lang):
         product_name = product.name_uz if lang == 'uz' else product.name_ru
         buttons.append(product_name)
 
-    buttons.append(_("back"))
-    buttons.append(_("basket"))
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     markup.add(*buttons, row_width=2)
+    markup.row(_("basket"), _("back"))
     return markup
 
 
 def choose_keyboard():
-    markup = types.ReplyKeyboardMarkup()
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     markup.row(types.KeyboardButton(_("basket")))
     markup.row(types.KeyboardButton(_("back")))
     return markup
@@ -86,7 +85,7 @@ def basket_keyboard(items: list[OrderItem], lang):
 
 def settings_keyboard():
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.add(_("change_language"))
+    markup.add(_("change_language"), _("change_phone"))
     markup.add(_("back"))
     return markup
 
@@ -102,4 +101,21 @@ def send_location():
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     markup.add(types.KeyboardButton(_("location"), request_location=True))
     markup.add(_("back"))
+    return markup
+
+
+def confirm_order():
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    markup.row(_("yes"), _("no"))
+    return markup
+
+
+def admin_order(order_id):
+    markup = types.InlineKeyboardMarkup()
+    markup.row(
+        types.InlineKeyboardButton(
+            _("Tasdiqlash"), callback_data=f"confirm_{order_id}"),
+        types.InlineKeyboardButton(
+            _("Bekor qilish"), callback_data=f"reject_{order_id}")
+    )
     return markup

@@ -17,13 +17,10 @@ class OrderHandler(Handler):
             self.reply(_("unknown"))
             return
         if type(msg) == types.Location:
-            self.user_session.state = 'main_menu'
+            self.user_session.state = 'confirm_order'
+            self.user_session.lat = msg.latitude
+            self.user_session.long = msg.longitude
             self.user_session.save()
-            self.reply(_("order_accepted"))
-            self.order.status = 'pending'
-            self.order.save()
-
-            # TODO: send order to admin group
 
 
 class OrderDisplayer(Displayer):
