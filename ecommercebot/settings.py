@@ -25,12 +25,14 @@ LOCALE_PATHS = (
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-kre6t&i_iqht5-w)kto+f4qdxa(2t1%u=7&1-msel(p=g&+1(3'
+SECRET_KEY = os.getenv("SECRET_KEY", 'secret')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("ENVIRONMENT", 'dev') == 'dev'
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["fayzbaraka.doniyorbek.uz"]
+
+CSRF_TRUSTED_ORIGINS = ["https://fayzbaraka.doniyorbek.uz"]
 
 
 # Application definition
