@@ -19,6 +19,7 @@ STATE_CHOICES = (
     ('basket', 'Basket'),
     ('order', 'Ordering'),
     ('settings', 'Settings'),
+    ('confirm_order', 'Confirm order'),
 )
 
 
@@ -45,6 +46,10 @@ class UserSession(models.Model):
         Category, on_delete=models.SET_NULL, null=True)
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     amount = models.IntegerField(default=0)
+    lat = models.DecimalField(
+        'latitude', max_digits=20, decimal_places=17, null=True)
+    long = models.DecimalField(
+        'longitude', max_digits=20, decimal_places=17, null=True)
 
     def __str__(self):
         return self.state

@@ -9,6 +9,7 @@ from abc import ABC, abstractmethod
 
 
 BOT_TOKEN = getattr(settings, "BOT_TOKEN")
+ADMIN_GROUP = getattr(settings, 'ADMIN_GROUP')
 bot = telebot.TeleBot(BOT_TOKEN, threaded=False)
 
 
@@ -34,6 +35,11 @@ class Control:
         bot.send_photo(self.user_id, image,
                        caption=caption, reply_markup=markup)
 
+    def reply_group(self, text, markup, lat, long):
+        msg = bot.send_location(ADMIN_GROUP, lat, long)
+        bot.send_message(ADMIN_GROUP, text, reply_markup=markup,
+                         reply_to_message_id=msg.id)
+
     def edit_markup(self, message_id, markup, text=None):
         bot.edit_message_reply_markup(
             self.user_id, message_id, reply_markup=markup)
@@ -47,6 +53,7 @@ class Handler(ABC):
         self.user_session = control.user_session
         self.reply = control.reply
         self.reply_image = control.reply_image
+        self.reply_group = control.reply_group
         self.edit_markup = control.edit_markup
         self.order = control.order
         self.control = control

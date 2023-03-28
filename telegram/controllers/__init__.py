@@ -10,6 +10,7 @@ from .basket import *
 from .settings import *
 from .select_language import *
 from .order import *
+from .confirm_order import *
 from .unknown import *
 
 
@@ -35,6 +36,8 @@ def get_handler(control: Control) -> Handler:
             return SelectLanguageHandler(control)
         case 'order':
             return OrderHandler(control)
+        case 'confirm_order':
+            return ConfirmOrderHandler(control)
 
         case other:
             return UnknownHandler(control)
@@ -60,6 +63,8 @@ def get_displayer(control: Control) -> Displayer:
             return SelectLanguageDisplayer(control)
         case 'order':
             return OrderDisplayer(control)
+        case 'confirm_order':
+            return ConfirmOrderDisplayer(control)
 
         case other:
             return MainMenuDisplayer(control)

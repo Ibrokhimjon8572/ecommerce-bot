@@ -1,4 +1,3 @@
-import logging
 import json
 import telebot
 
@@ -6,12 +5,18 @@ from django.http import JsonResponse, HttpRequest, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from .handlers import bot
+import os
 
 # Create your views here.
 
 
 @csrf_exempt
 def set_webhook(request: HttpRequest):
+    if os.getenv("ENVIRONMENT") != "dev":
+        return JsonResponse(status=400, data={
+            'status': False,
+            'message': 'Allowed only in development',
+        })
     bot.remove_webhook()
     if request.method != "POST":
         return JsonResponse(status=400, data={
@@ -32,6 +37,5 @@ def index(request: HttpRequest):
     if request.method == 'POST':
         update = telebot.types.Update.de_json(
             request.body.decode("utf-8"))
-        logging.info(update)
         bot.process_new_updates([update])
         return HttpResponse(status=200)
