@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", 'secret')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("ENVIRONMENT", 'dev') == 'dev'
 
-ALLOWED_HOSTS = ["fayzbaraka.doniyorbek.uz"]
+ALLOWED_HOSTS = ['*'] if DEBUG else ["fayzbaraka.doniyorbek.uz"]
 
 CSRF_TRUSTED_ORIGINS = ["https://fayzbaraka.doniyorbek.uz"]
 

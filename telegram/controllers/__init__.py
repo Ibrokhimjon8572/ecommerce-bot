@@ -11,10 +11,13 @@ from .settings import *
 from .select_language import *
 from .order import *
 from .confirm_order import *
+from .group_handler import *
 from .unknown import *
 
 
-def get_handler(control: Control) -> Handler:
+def get_handler(control: Control, from_group=False) -> Handler:
+    if from_group:
+        return GroupHandler(control)
     match control.user_session.state:
         case 'start':
             return StartHandler(control)
