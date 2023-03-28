@@ -46,8 +46,7 @@ def products_menu(products: list[Category], lang):
 
 def choose_keyboard():
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.row(types.KeyboardButton(_("basket")))
-    markup.row(types.KeyboardButton(_("back")))
+    markup.row(_("basket"), _("back"))
     return markup
 
 
@@ -100,6 +99,7 @@ def choose_language():
 def send_location():
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     markup.add(types.KeyboardButton(_("location"), request_location=True))
+    markup.add(_("skip"))
     markup.add(_("back"))
     return markup
 
@@ -118,4 +118,10 @@ def admin_order(order_id):
         types.InlineKeyboardButton(
             _("Bekor qilish"), callback_data=f"reject_{order_id}")
     )
+    return markup
+
+
+def comment_keyboard():
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    markup.add(_("back"))
     return markup

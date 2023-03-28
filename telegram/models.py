@@ -20,6 +20,7 @@ STATE_CHOICES = (
     ('order', 'Ordering'),
     ('settings', 'Settings'),
     ('confirm_order', 'Confirm order'),
+    ('send_comment', 'Sending comment'),
 )
 
 
@@ -50,6 +51,7 @@ class UserSession(models.Model):
         'latitude', max_digits=20, decimal_places=17, null=True)
     long = models.DecimalField(
         'longitude', max_digits=20, decimal_places=17, null=True)
+    comment = models.TextField(null=True)
 
     def __str__(self):
         return self.state

@@ -9,15 +9,19 @@ class OrderHandler(Handler):
         super().__init__(control)
 
     def handle(self, msg, message_id=None):
-        if type(msg) == str and msg == _("back"):
+        if msg == _("back"):
             self.user_session.state = 'basket'
+            self.user_session.save()
+            return
+        if msg == _("skip"):
+            self.user_session.state = 'send_comment'
             self.user_session.save()
             return
         if type(msg) == str:
             self.reply(_("unknown"))
             return
         if type(msg) == types.Location:
-            self.user_session.state = 'confirm_order'
+            self.user_session.state = 'send_comment'
             self.user_session.lat = msg.latitude
             self.user_session.long = msg.longitude
             self.user_session.save()

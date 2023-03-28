@@ -30,7 +30,6 @@ class ProductsHandler(Handler):
         self.user_session.state = 'amount'
         self.user_session.amount = 1
         self.user_session.save()
-        self.reply(_("choose"), keyboards.choose_keyboard())
 
 
 class ProductsDisplayer(Displayer):

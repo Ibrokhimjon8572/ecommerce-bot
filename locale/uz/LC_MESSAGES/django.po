@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-28 11:19+0500\n"
+"POT-Creation-Date: 2023-03-28 19:58+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,9 +21,10 @@ msgstr ""
 #: telegram/controllers/amount.py:13 telegram/controllers/categories.py:15
 #: telegram/controllers/order.py:12 telegram/controllers/products.py:14
 #: telegram/controllers/select_language.py:12
-#: telegram/controllers/settings.py:11 telegram/keyboards.py:31
-#: telegram/keyboards.py:43 telegram/keyboards.py:50 telegram/keyboards.py:70
-#: telegram/keyboards.py:89 telegram/keyboards.py:96 telegram/keyboards.py:103
+#: telegram/controllers/send_comment.py:11 telegram/controllers/settings.py:11
+#: telegram/keyboards.py:31 telegram/keyboards.py:43 telegram/keyboards.py:50
+#: telegram/keyboards.py:70 telegram/keyboards.py:89 telegram/keyboards.py:96
+#: telegram/keyboards.py:103 telegram/keyboards.py:126
 msgid "back"
 msgstr "🔙 Orqaga"
 
@@ -34,12 +35,24 @@ msgstr "🔙 Orqaga"
 msgid "basket"
 msgstr "🗑 Savatcha"
 
-#: telegram/controllers/amount.py:59
+#: telegram/controllers/amount.py:34
+msgid "added to basket"
+msgstr "🧺 Savatchaga qo'shildi"
+
+#: telegram/controllers/amount.py:40
+msgid "invalid number"
+msgstr "Miqdor xato kiritildi"
+
+#: telegram/controllers/amount.py:51
 #, python-format
 msgid "%(description)s Price: %(price)d"
 msgstr ""
 "%(description)s\n"
 "Narxi: %(price)d so'm"
+
+#: telegram/controllers/amount.py:59
+msgid "choose"
+msgstr "Miqdorni kiriting"
 
 #: telegram/controllers/ask_phone.py:23
 msgid "invalid_phone"
@@ -77,7 +90,7 @@ msgstr "Menyu"
 
 #: telegram/controllers/categories.py:26
 #: telegram/controllers/confirm_order.py:40
-#: telegram/controllers/main_menu.py:21 telegram/controllers/order.py:17
+#: telegram/controllers/main_menu.py:21 telegram/controllers/order.py:19
 #: telegram/controllers/products.py:27 telegram/controllers/unknown.py:10
 msgid "unknown"
 msgstr "Xatolik"
@@ -102,6 +115,14 @@ msgstr "Yo'q ❌"
 msgid "confirm order"
 msgstr "Tasdiqlash"
 
+#: telegram/controllers/group_handler.py:24
+msgid "confirmed"
+msgstr "Buyurtmangiz tasdiqlandi"
+
+#: telegram/controllers/group_handler.py:35
+msgid "cancelled"
+msgstr "Buyurtmangiz bekor qilindi"
+
 #: telegram/controllers/main_menu.py:11 telegram/keyboards.py:17
 msgid "orders"
 msgstr "Buyurtma berish"
@@ -110,13 +131,13 @@ msgstr "Buyurtma berish"
 msgid "settings"
 msgstr "⚙️ Sozlamalar"
 
-#: telegram/controllers/order.py:31
+#: telegram/controllers/order.py:16 telegram/keyboards.py:103
+msgid "skip"
+msgstr "Geolokatsiyasiz davom etish"
+
+#: telegram/controllers/order.py:33
 msgid "send location"
 msgstr "📍 Geolakatsiya jo'nating"
-
-#: telegram/controllers/products.py:33
-msgid "choose"
-msgstr "Tanlang"
 
 #: telegram/controllers/select_language.py:16 telegram/keyboards.py:95
 msgid "uz"
@@ -134,7 +155,11 @@ msgstr "Tayyor ✅"
 msgid "choose_language"
 msgstr "Tilni tanlang"
 
-#: telegram/✅controllers/settings.py:15 telegram/keyboards.py:88
+#: telegram/controllers/send_comment.py:25
+msgid "send comment"
+msgstr "Buyurtmangizga izoh yozing"
+
+#: telegram/controllers/settings.py:15 telegram/keyboards.py:88
 msgid "change_language"
 msgstr "Tilni o'zgartirish"
 
