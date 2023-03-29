@@ -19,7 +19,7 @@ class GroupHandler(Handler):
             bot.edit_message_reply_markup(
                 chat_id=cq.message.chat.id, message_id=cq.message.id, reply_markup=types.InlineKeyboardMarkup())
             bot.edit_message_text(
-                cq.message.text + "\nTasdiqlandi ✅", chat_id=cq.message.chat.id, message_id=cq.message.id)
+                cq.message.text.replace("Kutilmoqda", "Tasdiqlandi ✅"), chat_id=cq.message.chat.id, message_id=cq.message.id)
             translation.activate(order.user.language)
             bot.send_message(order.user.user_id, _('confirmed'))
         elif cq.data.startswith("reject_"):
@@ -30,6 +30,6 @@ class GroupHandler(Handler):
             bot.edit_message_reply_markup(
                 chat_id=cq.message.chat.id, message_id=cq.message.id, reply_markup=types.InlineKeyboardMarkup())
             bot.edit_message_text(
-                cq.message.text + "\nBekor qilindi ❌", chat_id=cq.message.chat.id, message_id=cq.message.id)
+                cq.message.text.replace("Kutilmoqda", "Bekor qilindi ❌"), chat_id=cq.message.chat.id, message_id=cq.message.id)
             translation.activate(order.user.language)
             bot.send_message(order.user.user_id, _('cancelled'))

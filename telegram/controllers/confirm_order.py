@@ -2,6 +2,8 @@ from telegram.control import Control, Handler, Displayer
 from telegram import keyboards
 from django.utils.translation import gettext as _
 
+from telegram.utils import *
+
 
 class ConfirmOrderHandler(Handler):
     def __init__(self, control: Control):
@@ -9,13 +11,16 @@ class ConfirmOrderHandler(Handler):
 
     def generate_text(self):
         text = "Yangi buyurtma: \n" \
-            f"Tel: {self.user.phone} \n\n"
+            f"Holat: <b>Kutilmoqda</b>\n" \
+            f"Tel: {self.user.phone} \n\n" \
+            f"Manzil: {get_address(self.user_session.lat, self.user_session.long)} \n\n"
         price = 0
         for item in self.order.order_items.all():
-            text += f"{item.product.name_uz} -- {item.amount}\n"
+            text += f"{number_to_emoji(item.amount)} ✖️ {item.product.name_uz}: {format_number(item.amount*item.price)}so'm\n"
             price += item.price * item.amount
-        text += f"Umumiy: {price} so'm\n"
-        text += f"Izoh: {self.user_session.comment}"
+        text += f"\n\n<b>Izoh:</b> {self.user_session.comment}\n\n"
+        text += f"<b>Jami:</b> {price} so'm"
+
         return text
 
     def handle(self, text, message_id=None):
@@ -44,4 +49,15 @@ class ConfirmOrderDisplayer(Displayer):
         super().__init__(control)
 
     def show(self):
-        self.reply(_("confirm order"), keyboards.confirm_order())
+        text = ""
+        address = get_address(self.user_session.lat, self.user_session.long)
+        if address:
+            text += _("address %(address)s") % {"address": address}
+            text += "\n"
+        text += generate_text(self.order.order_items.all(), self.user.language)
+        text += "\n"
+        text += _("comment %(comment)s") % {
+            "comment": self.user_session.comment}
+        text += "\n\n"
+        text += _("confirm order")
+        self.reply(text, keyboards.confirm_order())

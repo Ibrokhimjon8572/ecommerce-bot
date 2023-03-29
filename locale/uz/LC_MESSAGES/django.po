@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-29 11:44+0500\n"
+"POT-Creation-Date: 2023-03-29 13:04+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgid "back"
 msgstr "🔙 Orqaga"
 
 #: telegram/controllers/add_address.py:17 telegram/controllers/categories.py:26
-#: telegram/controllers/confirm_order.py:39
+#: telegram/controllers/confirm_order.py:43
 #: telegram/controllers/main_menu.py:21 telegram/controllers/order.py:25
 #: telegram/controllers/products.py:27
 #: telegram/controllers/select_from_addresses.py:28
@@ -50,7 +50,7 @@ msgstr "📍 Geolakatsiya jo'nating"
 msgid "enter address name"
 msgstr "Manzil nomini kiriting"
 
-#: telegram/controllers/amount.py:19 telegram/controllers/basket.py:66
+#: telegram/controllers/amount.py:19 telegram/controllers/basket.py:55
 #: telegram/controllers/categories.py:19 telegram/controllers/main_menu.py:14
 #: telegram/controllers/products.py:19 telegram/keyboards.py:25
 #: telegram/keyboards.py:38 telegram/keyboards.py:50 telegram/keyboards.py:56
@@ -84,29 +84,15 @@ msgstr "Telefon nomeri xato"
 msgid "hello_message"
 msgstr "Assalomu alaykum. Telefon nomeringizni jo'nating"
 
-#: telegram/controllers/basket.py:11
-msgid "products:\n"
-msgstr "Tovarlar:\n"
-
-#: telegram/controllers/basket.py:15
-#, python-format
-msgid "%(name)s x %(amount)d \n"
-msgstr "    %(amount)d X %(name)s\n"
-
-#: telegram/controllers/basket.py:18
-#, python-format
-msgid "total: %(price)d so'm"
-msgstr "Summa: %(price)d so'm"
-
-#: telegram/controllers/basket.py:36
+#: telegram/controllers/basket.py:25
 msgid "basked cleared"
 msgstr "Savatcha tozalandi"
 
-#: telegram/controllers/basket.py:53 telegram/controllers/basket.py:71
+#: telegram/controllers/basket.py:42 telegram/controllers/basket.py:60
 msgid "empty basket"
 msgstr "Savatcha bo'sh"
 
-#: telegram/controllers/basket.py:74 telegram/controllers/main_menu.py:29
+#: telegram/controllers/basket.py:63 telegram/controllers/main_menu.py:29
 msgid "main_menu"
 msgstr "Menyu"
 
@@ -114,21 +100,29 @@ msgstr "Menyu"
 msgid "categories"
 msgstr "Bo'limlar"
 
-#: telegram/controllers/confirm_order.py:22 telegram/keyboards.py:117
+#: telegram/controllers/confirm_order.py:26 telegram/keyboards.py:117
 msgid "yes"
 msgstr "Ha ✅"
 
-#: telegram/controllers/confirm_order.py:27
+#: telegram/controllers/confirm_order.py:31
 msgid "order_accepted"
 msgstr "Buyurtma administratorlarga jo'natildi"
 
-#: telegram/controllers/confirm_order.py:33 telegram/keyboards.py:117
+#: telegram/controllers/confirm_order.py:37 telegram/keyboards.py:117
 msgid "no"
 msgstr "Yo'q ❌"
 
-#: telegram/controllers/confirm_order.py:47
+#: telegram/controllers/confirm_order.py:52
+msgid "address %(address)s"
+msgstr "<b>Manzil:</b> %(address)s"
+
+#: telegram/controllers/confirm_order.py:56
+msgid "comment %(comment)s"
+msgstr "<b>Izoh:</b> %(comment)s"
+
+#: telegram/controllers/confirm_order.py:57
 msgid "confirm order"
-msgstr "Tasdiqlash"
+msgstr "Buyurtmani tasdiqlaysizmi?"
 
 #: telegram/controllers/group_handler.py:24
 msgid "confirmed"
@@ -156,7 +150,7 @@ msgstr "Mening manzillarim"
 
 #: telegram/controllers/select_from_addresses.py:16 telegram/keyboards.py:144
 msgid "add new address"
-msgstr "Yangil manzil kiritish"
+msgstr "Yangi manzil kiritish"
 
 #: telegram/controllers/select_from_addresses.py:37
 msgid "select address"
@@ -226,3 +220,13 @@ msgstr "Tasdiqlash ✅"
 #: telegram/keyboards.py:127
 msgid "Bekor qilish"
 msgstr "Bekor qilish ❌"
+
+#: telegram/utils.py:30
+#, python-format
+msgid "%(name)s ✖️ %(amount)s: %(price)s\n"
+msgstr "%(amount)s ✖️ %(name)s: %(price)s so'm\n"
+
+#: telegram/utils.py:34
+#, python-format
+msgid "total: %(price)s so'm"
+msgstr "<b>Jami:</b> %(price)s so'm"
