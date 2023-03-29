@@ -21,6 +21,10 @@ STATE_CHOICES = (
     ('settings', 'Settings'),
     ('confirm_order', 'Confirm order'),
     ('send_comment', 'Sending comment'),
+    ('select_from_address', 'Selecting from addresses'),
+    ('add_adress', 'Adding address'),
+    ('address_name', 'Adding address name'),
+    ('address_settings', 'Address settings'),
 )
 
 
@@ -55,3 +59,13 @@ class UserSession(models.Model):
 
     def __str__(self):
         return self.state
+
+
+class UserAddress(models.Model):
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="addresses")
+    name = models.CharField(max_length=200, null=False, default="address")
+    lat = models.DecimalField(
+        'latitude', max_digits=20, decimal_places=17, null=True)
+    long = models.DecimalField(
+        'longitude', max_digits=20, decimal_places=17, null=True)
