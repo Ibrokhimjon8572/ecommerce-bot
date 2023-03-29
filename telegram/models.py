@@ -21,8 +21,8 @@ STATE_CHOICES = (
     ('settings', 'Settings'),
     ('confirm_order', 'Confirm order'),
     ('send_comment', 'Sending comment'),
-    ('select_from_address', 'Selecting from addresses'),
-    ('add_adress', 'Adding address'),
+    ('select_from_addresses', 'Selecting from addresses'),
+    ('add_address', 'Adding address'),
     ('address_name', 'Adding address name'),
     ('address_settings', 'Address settings'),
 )

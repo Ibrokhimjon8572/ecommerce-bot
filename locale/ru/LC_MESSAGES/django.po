@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-28 19:55+0500\n"
+"POT-Creation-Date: 2023-03-29 11:44+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,39 +19,61 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: telegram/controllers/amount.py:13 telegram/controllers/categories.py:15
-#: telegram/controllers/order.py:12 telegram/controllers/products.py:14
+#: telegram/controllers/add_address.py:12
+#: telegram/controllers/address_name.py:12 telegram/controllers/amount.py:13
+#: telegram/controllers/categories.py:15 telegram/controllers/order.py:12
+#: telegram/controllers/products.py:14
+#: telegram/controllers/select_from_addresses.py:12
 #: telegram/controllers/select_language.py:12
 #: telegram/controllers/send_comment.py:11 telegram/controllers/settings.py:11
-#: telegram/keyboards.py:31 telegram/keyboards.py:43 telegram/keyboards.py:50
-#: telegram/keyboards.py:70 telegram/keyboards.py:89 telegram/keyboards.py:96
-#: telegram/keyboards.py:103 telegram/keyboards.py:126
+#: telegram/keyboards.py:11 telegram/keyboards.py:38 telegram/keyboards.py:50
+#: telegram/keyboards.py:56 telegram/keyboards.py:76 telegram/keyboards.py:95
+#: telegram/keyboards.py:102 telegram/keyboards.py:111
+#: telegram/keyboards.py:134 telegram/keyboards.py:144
+#: telegram/keyboards.py:151
 msgid "back"
 msgstr "🔙 Назад"
 
+#: telegram/controllers/add_address.py:17 telegram/controllers/categories.py:26
+#: telegram/controllers/confirm_order.py:39
+#: telegram/controllers/main_menu.py:21 telegram/controllers/order.py:25
+#: telegram/controllers/products.py:27
+#: telegram/controllers/select_from_addresses.py:28
+#: telegram/controllers/unknown.py:10
+msgid "unknown"
+msgstr "Ошибка"
+
+#: telegram/controllers/add_address.py:31 telegram/controllers/order.py:39
+msgid "send location"
+msgstr "Отправьте 📍 геолокацию"
+
+#: telegram/controllers/address_name.py:28
+msgid "enter address name"
+msgstr "Введите название адреса"
+
 #: telegram/controllers/amount.py:19 telegram/controllers/basket.py:66
 #: telegram/controllers/categories.py:19 telegram/controllers/main_menu.py:14
-#: telegram/controllers/products.py:19 telegram/keyboards.py:18
-#: telegram/keyboards.py:31 telegram/keyboards.py:43 telegram/keyboards.py:49
+#: telegram/controllers/products.py:19 telegram/keyboards.py:25
+#: telegram/keyboards.py:38 telegram/keyboards.py:50 telegram/keyboards.py:56
 msgid "basket"
 msgstr "🗑 Корзина"
 
-#: telegram/controllers/amount.py:34
+#: telegram/controllers/amount.py:36
 msgid "added to basket"
 msgstr "🧺 Добавлено в корзину"
 
-#: telegram/controllers/amount.py:40
+#: telegram/controllers/amount.py:42
 msgid "invalid number"
 msgstr "Неправильное количество"
 
-#: telegram/controllers/amount.py:51
+#: telegram/controllers/amount.py:53
 #, python-format
 msgid "%(description)s Price: %(price)d"
 msgstr ""
 "%(description)s\n"
 "Цена %(price)d"
 
-#: telegram/controllers/amount.py:59
+#: telegram/controllers/amount.py:61
 msgid "choose"
 msgstr "Введите количество"
 
@@ -89,30 +111,23 @@ msgstr "Ваша корзина пусто"
 msgid "main_menu"
 msgstr "Меню"
 
-#: telegram/controllers/categories.py:26
-#: telegram/controllers/confirm_order.py:40
-#: telegram/controllers/main_menu.py:21 telegram/controllers/order.py:19
-#: telegram/controllers/products.py:27 telegram/controllers/unknown.py:10
-msgid "unknown"
-msgstr "Ошибка"
-
 #: telegram/controllers/categories.py:39
 msgid "categories"
 msgstr "Категории"
 
-#: telegram/controllers/confirm_order.py:21 telegram/keyboards.py:109
+#: telegram/controllers/confirm_order.py:22 telegram/keyboards.py:117
 msgid "yes"
 msgstr "Да ✅"
 
-#: telegram/controllers/confirm_order.py:26
+#: telegram/controllers/confirm_order.py:27
 msgid "order_accepted"
 msgstr "Заказ отправлен администраторам"
 
-#: telegram/controllers/confirm_order.py:34 telegram/keyboards.py:109
+#: telegram/controllers/confirm_order.py:33 telegram/keyboards.py:117
 msgid "no"
 msgstr "Нет ❌"
 
-#: telegram/controllers/confirm_order.py:48
+#: telegram/controllers/confirm_order.py:47
 msgid "confirm order"
 msgstr "Подтвердить"
 
@@ -124,27 +139,35 @@ msgstr "Ваш заказ принят"
 msgid "cancelled"
 msgstr "Ваш заказ отменен"
 
-#: telegram/controllers/main_menu.py:11 telegram/keyboards.py:17
+#: telegram/controllers/main_menu.py:11 telegram/keyboards.py:24
 msgid "orders"
 msgstr "Заказать"
 
-#: telegram/controllers/main_menu.py:17 telegram/keyboards.py:19
+#: telegram/controllers/main_menu.py:17 telegram/keyboards.py:26
 msgid "settings"
 msgstr "⚙️ Настройки"
 
-#: telegram/controllers/order.py:16 telegram/keyboards.py:103
+#: telegram/controllers/order.py:16 telegram/keyboards.py:110
 msgid "skip"
 msgstr "Продолжить без геолокации"
 
-#: telegram/controllers/order.py:33
-msgid "send location"
-msgstr "Отправьте 📍 геолокацию"
+#: telegram/controllers/order.py:20 telegram/keyboards.py:109
+msgid "my addresses"
+msgstr "Мои адреса"
 
-#: telegram/controllers/select_language.py:16 telegram/keyboards.py:95
+#: telegram/controllers/select_from_addresses.py:16 telegram/keyboards.py:144
+msgid "add new address"
+msgstr "Добавить новый адрес"
+
+#: telegram/controllers/select_from_addresses.py:37
+msgid "select address"
+msgstr "Выберите адрес доставки"
+
+#: telegram/controllers/select_language.py:16 telegram/keyboards.py:101
 msgid "uz"
 msgstr "🇺🇿 O'zbekcha"
 
-#: telegram/controllers/select_language.py:20 telegram/keyboards.py:95
+#: telegram/controllers/select_language.py:20 telegram/keyboards.py:101
 msgid "ru"
 msgstr "🇷🇺 Русский"
 
@@ -160,11 +183,11 @@ msgstr "Выберите язык"
 msgid "send comment"
 msgstr "Отправьте комментарий к заказу"
 
-#: telegram/controllers/settings.py:15 telegram/keyboards.py:88
+#: telegram/controllers/settings.py:15 telegram/keyboards.py:94
 msgid "change_language"
 msgstr "Изменить язык"
 
-#: telegram/controllers/settings.py:18 telegram/keyboards.py:88
+#: telegram/controllers/settings.py:18 telegram/keyboards.py:94
 msgid "change_phone"
 msgstr "📞 Изменить номер телефона"
 
@@ -172,35 +195,35 @@ msgstr "📞 Изменить номер телефона"
 msgid "choose_action"
 msgstr "Выберите действие"
 
-#: telegram/keyboards.py:11
+#: telegram/keyboards.py:18
 msgid "send_phone_text"
 msgstr "📞 Отправить номер телефона"
 
-#: telegram/keyboards.py:63
+#: telegram/keyboards.py:69
 msgid "add to basket"
 msgstr "🧺 Добавить в корзину"
 
-#: telegram/keyboards.py:71
+#: telegram/keyboards.py:77
 msgid "order"
 msgstr "Заказать"
 
-#: telegram/keyboards.py:72
+#: telegram/keyboards.py:78
 msgid "clear basket"
 msgstr "Очистить корзину"
 
-#: telegram/keyboards.py:77
+#: telegram/keyboards.py:83
 #, python-format
 msgid "delete %(name)s"
 msgstr "❌ %(name)s"
 
-#: telegram/keyboards.py:102
+#: telegram/keyboards.py:108 telegram/keyboards.py:150
 msgid "location"
 msgstr "Отправить 📍 геолокацию"
 
-#: telegram/keyboards.py:117
+#: telegram/keyboards.py:125
 msgid "Tasdiqlash"
 msgstr "Tasdiqlash ✅"
 
-#: telegram/keyboards.py:119
+#: telegram/keyboards.py:127
 msgid "Bekor qilish"
 msgstr "Bekor qilish ❌"
