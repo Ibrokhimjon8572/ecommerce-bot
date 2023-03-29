@@ -30,7 +30,8 @@ class Control:
         translation.activate(self.user.language)
 
     def reply(self, text, markup=None):
-        bot.send_message(self.user_id, text, reply_markup=markup)
+        bot.send_message(self.user_id, text,
+                         reply_markup=markup, parse_mode='html')
 
     def reply_image(self, image, caption, markup=None):
         bot.send_photo(self.user_id, image,
@@ -42,13 +43,14 @@ class Control:
         else:
             msg = None
         bot.send_message(ADMIN_GROUP, text, reply_markup=markup,
-                         reply_to_message_id=msg and msg.id)
+                         reply_to_message_id=msg and msg.id, parse_mode='html')
 
     def edit_markup(self, message_id, markup, text=None):
         bot.edit_message_reply_markup(
-            self.user_id, message_id, reply_markup=markup)
+            self.user_id, message_id, reply_markup=markup, parse_mode='html')
         if text is not None:
-            bot.edit_message_text(text, self.user_id, message_id)
+            bot.edit_message_text(text, self.user_id,
+                                  message_id, parse_mode='html')
 
 
 class Handler(ABC):

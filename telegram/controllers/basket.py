@@ -5,18 +5,7 @@ import logging
 from order.models import OrderItem
 from telebot import types
 from django.db.models import Q
-
-
-def generate_text(items, lang):
-    text = _("products:\n")
-    price = 0
-    for item in items:
-        name = item.product.name_uz if lang == 'uz' else item.product.name_ru
-        text += _("%(name)s x %(amount)d \n") % {
-            "name": name, "amount": item.amount}
-        price += item.price * item.amount
-    text += _("total: %(price)d so'm") % {"price": price}
-    return text
+from telegram.utils import *
 
 
 class BasketHandler(Handler):
