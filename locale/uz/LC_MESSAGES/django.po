@@ -160,7 +160,7 @@ msgstr "Yangil manzil kiritish"
 
 #: telegram/controllers/select_from_addresses.py:37
 msgid "select address"
-msgstr "Yetkazib berish manzilini kiriting"
+msgstr "Yetkazib berish manzilini tanlang"
 
 #: telegram/controllers/select_language.py:16 telegram/keyboards.py:101
 msgid "uz"
