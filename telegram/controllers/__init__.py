@@ -13,6 +13,9 @@ from .order import *
 from .confirm_order import *
 from .group_handler import *
 from .send_comment import *
+from .add_address import *
+from .address_name import *
+from .select_from_addresses import *
 from .unknown import *
 
 
@@ -44,6 +47,12 @@ def get_handler(control: Control, from_group=False) -> Handler:
             return ConfirmOrderHandler(control)
         case 'send_comment':
             return SendCommentHandler(control)
+        case 'add_address':
+            return AddAddressHandler(control)
+        case 'address_name':
+            return AddressNameHandler(control)
+        case 'select_from_addresses':
+            return SelectFromAddressesHandler(control)
 
         case other:
             return UnknownHandler(control)
@@ -73,6 +82,12 @@ def get_displayer(control: Control) -> Displayer:
             return ConfirmOrderDisplayer(control)
         case 'send_comment':
             return SendCommentDisplayer(control)
+        case 'add_address':
+            return AddAddressDisplayer(control)
+        case 'address_name':
+            return AddressNameDisplayer(control)
+        case 'select_from_addresses':
+            return SelectFromAddressesDisplayer(control)
 
         case other:
             return MainMenuDisplayer(control)

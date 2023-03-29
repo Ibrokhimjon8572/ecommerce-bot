@@ -3,6 +3,13 @@ from telebot import types
 from django.utils.translation import gettext as _
 from product.models import Category
 from order.models import OrderItem
+from telegram.models import UserAddress
+
+
+def back():
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    markup.add(_("back"))
+    return markup
 
 
 def send_phone():
@@ -99,6 +106,7 @@ def choose_language():
 def send_location():
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     markup.add(types.KeyboardButton(_("location"), request_location=True))
+    markup.add(_("my addresses"))
     markup.add(_("skip"))
     markup.add(_("back"))
     return markup
@@ -123,5 +131,22 @@ def admin_order(order_id):
 
 def comment_keyboard():
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    markup.add(_("back"))
+    return markup
+
+
+def select_address_keyboard(addresses: list[UserAddress]):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    buttons = []
+    for address in addresses:
+        buttons.append(address.name)
+    markup.add(*buttons, row_width=2)
+    markup.add(_("add new address"), _("back"))
+    return markup
+
+
+def add_address_keyboard():
+    markup = types.ReplyKeyboardMarkup()
+    markup.add(types.KeyboardButton(_("location"), request_location=True))
     markup.add(_("back"))
     return markup
