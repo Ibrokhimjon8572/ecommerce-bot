@@ -13,7 +13,7 @@ class SendCommentHandler(Handler):
             self.user_session.save()
             return
         self.user_session.comment = msg
-        self.user_session.state = 'confirm_order'
+        self.user_session.state = 'choose_payment'
         self.user_session.save()
 
 

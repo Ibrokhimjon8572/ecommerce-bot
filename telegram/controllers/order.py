@@ -15,6 +15,8 @@ class OrderHandler(Handler):
             return
         if msg == _("skip"):
             self.user_session.state = 'send_comment'
+            self.user_session.lat = None
+            self.user_session.long = None
             self.user_session.save()
             return
         if msg == _("my addresses"):

@@ -13,10 +13,10 @@ format:
 	autoflake --in-place --remove-unused-variables --remove-all-unused-imports ./*/*.py ./*.py ./*/*/*.py
 
 messages-uz:
-	django-admin makemessages -l uz --ignore env
+	django-admin makemessages -l uz --ignore env --ignore venv
 
 messages-ru:
-	django-admin makemessages -l ru --ignore env
+	django-admin makemessages -l ru --ignore env --ignore venv
 
 compile-language:
-	django-admin compilemessages --ignore env
+	django-admin compilemessages --ignore env --ignore venv

@@ -8,6 +8,13 @@ LANGUAGE_CHOICES = (
     ('ru', "Русский"),
 )
 
+PAYMENT_CHOICES = (
+    ('payme', "Payme"),
+    ('click', "CLICK"),
+    ('cash', "Naqd pul"),
+    ('terminal', "Terminal"),
+)
+
 STATE_CHOICES = (
     ('start', 'Start'),
     ('select_language', 'Selecting language'),
@@ -25,6 +32,7 @@ STATE_CHOICES = (
     ('add_address', 'Adding address'),
     ('address_name', 'Adding address name'),
     ('address_settings', 'Address settings'),
+    ('choose_payment', 'Choose payment type'),
 )
 
 
@@ -56,6 +64,8 @@ class UserSession(models.Model):
     long = models.DecimalField(
         'longitude', max_digits=20, decimal_places=17, null=True)
     comment = models.TextField(null=True)
+    payment_method = models.CharField(
+        max_length=50, null=True, choices=PAYMENT_CHOICES)
 
     def __str__(self):
         return self.state
