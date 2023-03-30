@@ -15,6 +15,13 @@ STATE_CHOICES = (
     ('cancelled', 'cancelled'),
 )
 
+PAYMENT_CHOICES = (
+    ('payme', "PayMe"),
+    ('click', "CLICK"),
+    ('cash', "Naqd pul"),
+    ('terminal', "Joyida"),
+)
+
 
 class Order(models.Model):
     id = models.UUIDField(default=uuid.uuid4, editable=False,
@@ -24,6 +31,8 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(
         default='created', max_length=100, null=False, blank=False, choices=STATE_CHOICES)
+    payment_type = models.CharField(
+        max_length=50, null=False, choices=PAYMENT_CHOICES)
 
     def __str__(self):
         return f'{self.user and self.user.name} at {self.created_at.strftime("%d.%m.%Y %H:%M:%S")}'

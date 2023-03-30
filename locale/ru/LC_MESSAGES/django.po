@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-29 13:04+0500\n"
+"POT-Creation-Date: 2023-03-30 20:09+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,13 +16,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
-
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 #: telegram/controllers/add_address.py:12
 #: telegram/controllers/address_name.py:12 telegram/controllers/amount.py:13
-#: telegram/controllers/categories.py:15 telegram/controllers/order.py:12
+#: telegram/controllers/categories.py:15
+#: telegram/controllers/choose_payment.py:11 telegram/controllers/order.py:12
 #: telegram/controllers/products.py:14
 #: telegram/controllers/select_from_addresses.py:12
 #: telegram/controllers/select_language.py:12
@@ -29,208 +30,230 @@ msgstr ""
 #: telegram/keyboards.py:11 telegram/keyboards.py:38 telegram/keyboards.py:50
 #: telegram/keyboards.py:56 telegram/keyboards.py:76 telegram/keyboards.py:95
 #: telegram/keyboards.py:102 telegram/keyboards.py:111
-#: telegram/keyboards.py:134 telegram/keyboards.py:144
-#: telegram/keyboards.py:151
+#: telegram/keyboards.py:136 telegram/keyboards.py:143
+#: telegram/keyboards.py:153 telegram/keyboards.py:160
 msgid "back"
-msgstr "🔙 Назад"
+msgstr ""
 
 #: telegram/controllers/add_address.py:17 telegram/controllers/categories.py:26
-#: telegram/controllers/confirm_order.py:43
-#: telegram/controllers/main_menu.py:21 telegram/controllers/order.py:25
+#: telegram/controllers/confirm_order.py:45
+#: telegram/controllers/main_menu.py:21 telegram/controllers/order.py:27
 #: telegram/controllers/products.py:27
 #: telegram/controllers/select_from_addresses.py:28
 #: telegram/controllers/unknown.py:10
 msgid "unknown"
-msgstr "Ошибка"
+msgstr ""
 
-#: telegram/controllers/add_address.py:31 telegram/controllers/order.py:39
+#: telegram/controllers/add_address.py:31 telegram/controllers/order.py:41
 msgid "send location"
-msgstr "Отправьте 📍 геолокацию"
+msgstr ""
 
 #: telegram/controllers/address_name.py:28
 msgid "enter address name"
-msgstr "Введите название адреса"
+msgstr ""
 
 #: telegram/controllers/amount.py:19 telegram/controllers/basket.py:55
 #: telegram/controllers/categories.py:19 telegram/controllers/main_menu.py:14
 #: telegram/controllers/products.py:19 telegram/keyboards.py:25
 #: telegram/keyboards.py:38 telegram/keyboards.py:50 telegram/keyboards.py:56
 msgid "basket"
-msgstr "🗑 Корзина"
+msgstr ""
 
 #: telegram/controllers/amount.py:36
 msgid "added to basket"
-msgstr "🧺 Добавлено в корзину"
+msgstr ""
 
 #: telegram/controllers/amount.py:42
 msgid "invalid number"
-msgstr "Неправильное количество"
+msgstr ""
 
 #: telegram/controllers/amount.py:53
 #, python-format
 msgid "%(description)s Price: %(price)d"
 msgstr ""
-"%(description)s\n"
-"Цена %(price)d"
 
 #: telegram/controllers/amount.py:61
 msgid "choose"
-msgstr "Введите количество"
+msgstr ""
 
 #: telegram/controllers/ask_phone.py:23
 msgid "invalid_phone"
-msgstr "Неправильный номер телефона"
+msgstr ""
 
 #: telegram/controllers/ask_phone.py:37
 msgid "hello_message"
-msgstr "Привет. Отправьте номер телефона"
+msgstr ""
 
 #: telegram/controllers/basket.py:25
 msgid "basked cleared"
-msgstr "Корзина очищена"
+msgstr ""
 
 #: telegram/controllers/basket.py:42 telegram/controllers/basket.py:60
 msgid "empty basket"
-msgstr "Ваша корзина пусто"
+msgstr ""
 
 #: telegram/controllers/basket.py:63 telegram/controllers/main_menu.py:29
 msgid "main_menu"
-msgstr "Меню"
+msgstr ""
 
 #: telegram/controllers/categories.py:39
 msgid "categories"
-msgstr "Категории"
+msgstr ""
 
-#: telegram/controllers/confirm_order.py:26 telegram/keyboards.py:117
+#: telegram/controllers/choose_payment.py:15 telegram/keyboards.py:134
+msgid "payme"
+msgstr ""
+
+#: telegram/controllers/choose_payment.py:19 telegram/keyboards.py:134
+msgid "click"
+msgstr ""
+
+#: telegram/controllers/choose_payment.py:23 telegram/keyboards.py:135
+msgid "cash"
+msgstr ""
+
+#: telegram/controllers/choose_payment.py:27 telegram/keyboards.py:135
+msgid "terminal"
+msgstr ""
+
+#: telegram/controllers/choose_payment.py:38
+msgid "ask payment"
+msgstr ""
+
+#: telegram/controllers/confirm_order.py:28 telegram/keyboards.py:117
 msgid "yes"
-msgstr "Да ✅"
+msgstr ""
 
-#: telegram/controllers/confirm_order.py:31
+#: telegram/controllers/confirm_order.py:33
 msgid "order_accepted"
-msgstr "Заказ отправлен администраторам"
+msgstr ""
 
-#: telegram/controllers/confirm_order.py:37 telegram/keyboards.py:117
+#: telegram/controllers/confirm_order.py:39 telegram/keyboards.py:117
 msgid "no"
-msgstr "Нет ❌"
-
-#: telegram/controllers/confirm_order.py:52
-msgid "address %(address)s"
-msgstr "<b>Адрес:</b> %(address)s"
+msgstr ""
 
 #: telegram/controllers/confirm_order.py:56
-msgid "comment %(comment)s"
-msgstr "<b>Комментарий к заказу:</b> %(comment)s"
+#, python-format
+msgid "address %(address)s"
+msgstr ""
 
-#: telegram/controllers/confirm_order.py:57
+#: telegram/controllers/confirm_order.py:60
+#, python-format
+msgid "payment_type: %(payment_type)s"
+msgstr ""
+
+#: telegram/controllers/confirm_order.py:64
+#, python-format
+msgid "comment %(comment)s"
+msgstr ""
+
+#: telegram/controllers/confirm_order.py:66
 msgid "confirm order"
-msgstr "Подтвердить заказ?"
+msgstr ""
 
 #: telegram/controllers/group_handler.py:24
 msgid "confirmed"
-msgstr "Ваш заказ принят"
+msgstr ""
 
 #: telegram/controllers/group_handler.py:35
 msgid "cancelled"
-msgstr "Ваш заказ отменен"
+msgstr ""
 
 #: telegram/controllers/main_menu.py:11 telegram/keyboards.py:24
 msgid "orders"
-msgstr "Заказать"
+msgstr ""
 
 #: telegram/controllers/main_menu.py:17 telegram/keyboards.py:26
 msgid "settings"
-msgstr "⚙️ Настройки"
+msgstr ""
 
 #: telegram/controllers/order.py:16 telegram/keyboards.py:110
 msgid "skip"
-msgstr "Продолжить без геолокации"
+msgstr ""
 
-#: telegram/controllers/order.py:20 telegram/keyboards.py:109
+#: telegram/controllers/order.py:22 telegram/keyboards.py:109
 msgid "my addresses"
-msgstr "Мои адреса"
+msgstr ""
 
-#: telegram/controllers/select_from_addresses.py:16 telegram/keyboards.py:144
+#: telegram/controllers/select_from_addresses.py:16 telegram/keyboards.py:153
 msgid "add new address"
-msgstr "Добавить новый адрес"
+msgstr ""
 
 #: telegram/controllers/select_from_addresses.py:37
 msgid "select address"
-msgstr "Выберите адрес доставки"
+msgstr ""
 
 #: telegram/controllers/select_language.py:16 telegram/keyboards.py:101
 msgid "uz"
-msgstr "🇺🇿 O'zbekcha"
+msgstr ""
 
 #: telegram/controllers/select_language.py:20 telegram/keyboards.py:101
 msgid "ru"
-msgstr "🇷🇺 Русский"
+msgstr ""
 
 #: telegram/controllers/select_language.py:26
 msgid "ready"
-msgstr "Готово ✅"
+msgstr ""
 
 #: telegram/controllers/select_language.py:36
 msgid "choose_language"
-msgstr "Выберите язык"
+msgstr ""
 
 #: telegram/controllers/send_comment.py:25
 msgid "send comment"
-msgstr "Отправьте комментарий к заказу"
+msgstr ""
 
 #: telegram/controllers/settings.py:15 telegram/keyboards.py:94
 msgid "change_language"
-msgstr "Изменить язык"
+msgstr ""
 
 #: telegram/controllers/settings.py:18 telegram/keyboards.py:94
 msgid "change_phone"
-msgstr "📞 Изменить номер телефона"
+msgstr ""
 
 #: telegram/controllers/settings.py:28
 msgid "choose_action"
-msgstr "Выберите действие"
+msgstr ""
 
 #: telegram/keyboards.py:18
 msgid "send_phone_text"
-msgstr "📞 Отправить номер телефона"
+msgstr ""
 
 #: telegram/keyboards.py:69
 msgid "add to basket"
-msgstr "🧺 Добавить в корзину"
+msgstr ""
 
 #: telegram/keyboards.py:77
 msgid "order"
-msgstr "Заказать"
+msgstr ""
 
 #: telegram/keyboards.py:78
 msgid "clear basket"
-msgstr "Очистить корзину"
+msgstr ""
 
 #: telegram/keyboards.py:83
 #, python-format
 msgid "delete %(name)s"
-msgstr "❌ %(name)s"
+msgstr ""
 
-#: telegram/keyboards.py:108 telegram/keyboards.py:150
+#: telegram/keyboards.py:108 telegram/keyboards.py:159
 msgid "location"
-msgstr "Отправить 📍 геолокацию"
+msgstr ""
 
 #: telegram/keyboards.py:125
 msgid "Tasdiqlash"
-msgstr "Tasdiqlash ✅"
+msgstr ""
 
 #: telegram/keyboards.py:127
 msgid "Bekor qilish"
-msgstr "Bekor qilish ❌"
+msgstr ""
 
-#: telegram/utils.py:30
+#: telegram/utils.py:33
 #, python-format
 msgid "%(name)s ✖️ %(amount)s: %(price)s\n"
-msgstr "%(amount)s ✖️ %(name)s: %(price)s сум\n"
+msgstr ""
 
-#: telegram/utils.py:34
+#: telegram/utils.py:37
 #, python-format
 msgid "total: %(price)s so'm"
-msgstr "<b>Сумма:</b> %(price)s сум"
-
-#~ msgid "products:\n"
-#~ msgstr "Продукты:\n"
+msgstr ""

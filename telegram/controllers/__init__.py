@@ -16,6 +16,7 @@ from .send_comment import *
 from .add_address import *
 from .address_name import *
 from .select_from_addresses import *
+from .choose_payment import *
 from .unknown import *
 
 
@@ -53,6 +54,8 @@ def get_handler(control: Control, from_group=False) -> Handler:
             return AddressNameHandler(control)
         case 'select_from_addresses':
             return SelectFromAddressesHandler(control)
+        case 'choose_payment':
+            return ChoosePaymentHandler(control)
 
         case other:
             return UnknownHandler(control)
@@ -88,6 +91,8 @@ def get_displayer(control: Control) -> Displayer:
             return AddressNameDisplayer(control)
         case 'select_from_addresses':
             return SelectFromAddressesDisplayer(control)
+        case 'choose_payment':
+            return ChoosePaymentDisplayer(control)
 
         case other:
             return MainMenuDisplayer(control)

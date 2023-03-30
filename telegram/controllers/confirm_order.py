@@ -18,8 +18,9 @@ class ConfirmOrderHandler(Handler):
         for item in self.order.order_items.all():
             text += f"{number_to_emoji(item.amount)} ✖️ {item.product.name_uz}: {format_number(item.amount*item.price)}so'm\n"
             price += item.price * item.amount
+        text += f"\n<b>Jami:</b> {format_number(price)} so'm\n"
+        text += f"<b>To'lov turi:</b> {self.user_session.payment_method}"
         text += f"\n\n<b>Izoh:</b> {self.user_session.comment}\n\n"
-        text += f"<b>Jami:</b> {price} so'm"
 
         return text
 
@@ -56,8 +57,11 @@ class ConfirmOrderDisplayer(Displayer):
             text += "\n"
         text += generate_text(self.order.order_items.all(), self.user.language)
         text += "\n"
+        text += _("payment_type: %(payment_type)s") % {
+            "payment_type": self.user_session.payment_method
+        }
+        text += "\n\n"
         text += _("comment %(comment)s") % {
             "comment": self.user_session.comment}
-        text += "\n\n"
         text += _("confirm order")
         self.reply(text, keyboards.confirm_order())

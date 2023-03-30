@@ -129,6 +129,15 @@ def admin_order(order_id):
     return markup
 
 
+def select_payment():
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    markup.row(_("payme"), _("click"))
+    markup.row(_("cash"), _("terminal"))
+    markup.row(_("back"))
+
+    return markup
+
+
 def comment_keyboard():
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     markup.add(_("back"))
