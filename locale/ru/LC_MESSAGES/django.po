@@ -70,7 +70,9 @@ msgstr "Неправильное количество"
 #: telegram/controllers/amount.py:53
 #, python-format
 msgid "%(description)s Price: %(price)d"
-msgstr "%(description)s\n Цена %(price)d сум"
+msgstr ""
+"%(description)s\n"
+"Цена %(price)d сум"
 
 #: telegram/controllers/amount.py:61
 msgid "choose"

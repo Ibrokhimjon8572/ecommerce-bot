@@ -16,10 +16,10 @@ STATE_CHOICES = (
 )
 
 PAYMENT_CHOICES = (
-    ('payme', "PayMe"),
+    ('payme', "Payme"),
     ('click', "CLICK"),
     ('cash', "Naqd pul"),
-    ('terminal', "Joyida"),
+    ('terminal', "Terminal"),
 )
 
 

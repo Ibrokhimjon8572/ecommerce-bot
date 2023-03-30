@@ -68,7 +68,9 @@ msgstr "Miqdor xato kiritildi"
 #: telegram/controllers/amount.py:53
 #, python-format
 msgid "%(description)s Price: %(price)d"
-msgstr "%(description)s\n Narxi: %(price)d so'm"
+msgstr ""
+"%(description)s\n"
+"Narxi: %(price)d so'm"
 
 #: telegram/controllers/amount.py:61
 msgid "choose"
@@ -184,7 +186,7 @@ msgstr "Mening manzillarim"
 
 #: telegram/controllers/payment_handler.py:17
 msgid "payment success"
-msgstr ""
+msgstr "To'lov muvaffaqiyatli amalga oshirildi"
 
 #: telegram/controllers/select_from_addresses.py:16 telegram/keyboards.py:153
 msgid "add new address"
