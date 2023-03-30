@@ -37,6 +37,12 @@ class Order(models.Model):
     def __str__(self):
         return f'{self.user and self.user.name} at {self.created_at.strftime("%d.%m.%Y %H:%M:%S")}'
 
+    def amount(self):
+        price = 0
+        for item in self.order_items.all():
+            price += item.amount * item.price
+        return price
+
 
 class OrderItem(models.Model):
     id = models.UUIDField(default=uuid.uuid4, editable=False,

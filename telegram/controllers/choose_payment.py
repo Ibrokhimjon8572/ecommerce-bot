@@ -14,19 +14,19 @@ class ChoosePaymentHandler(Handler):
             return
         if text == _("payme"):
             self.user_session.state = 'confirm_order'
-            self.user_session.payment_method = text
+            self.user_session.payment_method = 'payme'
             self.user_session.save()
         if text == _("click"):
             self.user_session.state = 'confirm_order'
-            self.user_session.payment_method = text
+            self.user_session.payment_method = 'click'
             self.user_session.save()
         if text == _("cash"):
             self.user_session.state = 'confirm_order'
-            self.user_session.payment_method = text
+            self.user_session.payment_method = 'cash'
             self.user_session.save()
         if text == _("terminal"):
             self.user_session.state = 'confirm_order'
-            self.user_session.payment_method = text
+            self.user_session.payment_method = 'terminal'
             self.user_session.save()
 
 

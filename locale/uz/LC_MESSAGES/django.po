@@ -15,9 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: telegram/controllers/add_address.py:12
 #: telegram/controllers/address_name.py:12 telegram/controllers/amount.py:13
@@ -33,7 +31,7 @@ msgstr ""
 #: telegram/keyboards.py:136 telegram/keyboards.py:143
 #: telegram/keyboards.py:153 telegram/keyboards.py:160
 msgid "back"
-msgstr "🔙 Назад"
+msgstr "🔙 Orqaga"
 
 #: telegram/controllers/add_address.py:17 telegram/controllers/categories.py:26
 #: telegram/controllers/confirm_order.py:45
@@ -42,65 +40,65 @@ msgstr "🔙 Назад"
 #: telegram/controllers/select_from_addresses.py:28
 #: telegram/controllers/unknown.py:10
 msgid "unknown"
-msgstr "Ошибка"
+msgstr "Xatolik"
 
 #: telegram/controllers/add_address.py:31 telegram/controllers/order.py:41
 msgid "send location"
-msgstr "Отправьте 📍 геолокацию"
+msgstr "📍 Geolakatsiya jo'nating"
 
 #: telegram/controllers/address_name.py:28
 msgid "enter address name"
-msgstr "Введите название адреса"
+msgstr "Manzil nomini kiriting"
 
 #: telegram/controllers/amount.py:19 telegram/controllers/basket.py:55
 #: telegram/controllers/categories.py:19 telegram/controllers/main_menu.py:14
 #: telegram/controllers/products.py:19 telegram/keyboards.py:25
 #: telegram/keyboards.py:38 telegram/keyboards.py:50 telegram/keyboards.py:56
 msgid "basket"
-msgstr "🗑 Корзина"
+msgstr "🗑 Savatcha"
 
 #: telegram/controllers/amount.py:36
 msgid "added to basket"
-msgstr "🧺 Добавлено в корзину"
+msgstr "🧺 Savatchaga qo'shildi"
 
 #: telegram/controllers/amount.py:42
 msgid "invalid number"
-msgstr "Неправильное количество"
+msgstr "Miqdor xato kiritildi"
 
 #: telegram/controllers/amount.py:53
 #, python-format
 msgid "%(description)s Price: %(price)d"
 msgstr ""
 "%(description)s\n"
-"Цена %(price)d сум"
+"Narxi: %(price)d so'm"
 
 #: telegram/controllers/amount.py:61
 msgid "choose"
-msgstr "Введите количество"
+msgstr "Miqdorni kiriting"
 
 #: telegram/controllers/ask_phone.py:23
 msgid "invalid_phone"
-msgstr "Неправильный номер телефона"
+msgstr "Telefon nomeri xato"
 
 #: telegram/controllers/ask_phone.py:37
 msgid "hello_message"
-msgstr "Привет. Отправьте номер телефона"
+msgstr "Assalomu alaykum. Telefon nomeringizni jo'nating"
 
 #: telegram/controllers/basket.py:25
 msgid "basked cleared"
-msgstr "Корзина очищена"
+msgstr "Savatcha tozalandi"
 
 #: telegram/controllers/basket.py:42 telegram/controllers/basket.py:60
 msgid "empty basket"
-msgstr "Ваша корзина пусто"
+msgstr "Savatcha bo'sh"
 
 #: telegram/controllers/basket.py:63 telegram/controllers/main_menu.py:29
 msgid "main_menu"
-msgstr "Меню"
+msgstr "Menyu"
 
 #: telegram/controllers/categories.py:39
 msgid "categories"
-msgstr "Категории"
+msgstr "Bo'limlar"
 
 #: telegram/controllers/choose_payment.py:15 telegram/keyboards.py:134
 msgid "payme"
@@ -112,78 +110,78 @@ msgstr "Click"
 
 #: telegram/controllers/choose_payment.py:23 telegram/keyboards.py:135
 msgid "cash"
-msgstr "Наличные"
+msgstr "Naqd pul"
 
 #: telegram/controllers/choose_payment.py:27 telegram/keyboards.py:135
 msgid "terminal"
-msgstr "Терминал"
+msgstr "Terminal"
 
 #: telegram/controllers/choose_payment.py:38
 msgid "ask payment"
-msgstr "Выберите способ оплаты"
+msgstr "To'lov turini tanlang"
 
 #: telegram/controllers/confirm_order.py:28 telegram/keyboards.py:117
 msgid "yes"
-msgstr "Да ✅"
+msgstr "Ha ✅"
 
 #: telegram/controllers/confirm_order.py:33
 msgid "order_accepted"
-msgstr "Заказ отправлен администраторам"
+msgstr "Buyurtma administratorlarga jo'natildi"
 
 #: telegram/controllers/confirm_order.py:39 telegram/keyboards.py:117
 msgid "no"
-msgstr "Нет ❌"
+msgstr "Yo'q ❌"
 
 #: telegram/controllers/confirm_order.py:56
 #, python-format
 msgid "address %(address)s"
-msgstr "<b>Адрес:</b> %(address)s"
+msgstr "<b>Manzil:</b> %(address)s"
 
 #: telegram/controllers/confirm_order.py:60
 #, python-format
 msgid "payment_type: %(payment_type)s"
-msgstr "<b>Способ оплаты:</b> %(payment_type)s"
+msgstr "<b>To'lov turi:</b> %(payment_type)s"
 
 #: telegram/controllers/confirm_order.py:64
 #, python-format
 msgid "comment %(comment)s"
-msgstr "<b>Комментарий к заказу:</b> %(comment)s"
+msgstr "<b>Izoh:</b> %(comment)s"
 
 #: telegram/controllers/confirm_order.py:66
 msgid "confirm order"
-msgstr "Подтвердить заказ?"
+msgstr "Buyurtmani tasdiqlaysizmi?"
 
 #: telegram/controllers/group_handler.py:24
 msgid "confirmed"
-msgstr "Ваш заказ принят"
+msgstr "Buyurtmangiz tasdiqlandi"
 
 #: telegram/controllers/group_handler.py:35
 msgid "cancelled"
-msgstr "Ваш заказ отменен"
+msgstr "Buyurtmangiz bekor qilindi"
 
 #: telegram/controllers/main_menu.py:11 telegram/keyboards.py:24
 msgid "orders"
-msgstr "Заказать"
+msgstr "Buyurtma berish"
 
 #: telegram/controllers/main_menu.py:17 telegram/keyboards.py:26
 msgid "settings"
-msgstr "⚙️ Настройки"
+msgstr "⚙️ Sozlamalar"
 
 #: telegram/controllers/order.py:16 telegram/keyboards.py:110
 msgid "skip"
-msgstr "Продолжить без геолокации"
+msgstr "Geolokatsiyasiz davom etish"
 
 #: telegram/controllers/order.py:22 telegram/keyboards.py:109
 msgid "my addresses"
-msgstr "Мои адреса"
+msgstr "Mening manzillarim"
 
 #: telegram/controllers/select_from_addresses.py:16 telegram/keyboards.py:153
 msgid "add new address"
-msgstr "Добавить новый адрес"
+msgstr "Yangi manzil kiritish"
 
 #: telegram/controllers/select_from_addresses.py:37
 msgid "select address"
-msgstr "Выберите адрес доставки"
+msgstr "Yetkazib berish manzilini tanlang"
 
 #: telegram/controllers/select_language.py:16 telegram/keyboards.py:101
 msgid "uz"
@@ -195,43 +193,43 @@ msgstr "🇷🇺 Русский"
 
 #: telegram/controllers/select_language.py:26
 msgid "ready"
-msgstr "Готово ✅"
+msgstr "Tayyor ✅"
 
 #: telegram/controllers/select_language.py:36
 msgid "choose_language"
-msgstr "Выберите язык"
+msgstr "Tilni tanlang"
 
 #: telegram/controllers/send_comment.py:25
 msgid "send comment"
-msgstr "Отправьте комментарий к заказу"
+msgstr "Buyurtmangizga izoh yozing"
 
 #: telegram/controllers/settings.py:15 telegram/keyboards.py:94
 msgid "change_language"
-msgstr "Изменить язык"
+msgstr "Tilni o'zgartirish"
 
 #: telegram/controllers/settings.py:18 telegram/keyboards.py:94
 msgid "change_phone"
-msgstr "📞 Изменить номер телефона"
+msgstr "📞 Telefon nomerni o'zgartirish"
 
 #: telegram/controllers/settings.py:28
 msgid "choose_action"
-msgstr "Выберите действие"
+msgstr "Amalni tanlang"
 
 #: telegram/keyboards.py:18
 msgid "send_phone_text"
-msgstr "📞 Отправить номер телефона"
+msgstr "📞 Telefon nomerni jo'natish"
 
 #: telegram/keyboards.py:69
 msgid "add to basket"
-msgstr "🧺 Добавить в корзину"
+msgstr "🧺 Savatchaga qo'shish"
 
 #: telegram/keyboards.py:77
 msgid "order"
-msgstr "Заказать"
+msgstr "Buyurtma berish"
 
 #: telegram/keyboards.py:78
 msgid "clear basket"
-msgstr "Очистить корзину"
+msgstr "Savatchani tozalash"
 
 #: telegram/keyboards.py:83
 #, python-format
@@ -240,7 +238,7 @@ msgstr "❌ %(name)s"
 
 #: telegram/keyboards.py:108 telegram/keyboards.py:159
 msgid "location"
-msgstr "Отправить 📍 геолокацию"
+msgstr "📍 Geolakatsiya jo'natish"
 
 #: telegram/keyboards.py:125
 msgid "Tasdiqlash"
@@ -253,12 +251,9 @@ msgstr "Bekor qilish ❌"
 #: telegram/utils.py:33
 #, python-format
 msgid "%(name)s ✖️ %(amount)s: %(price)s\n"
-msgstr "%(amount)s ✖️ %(name)s: %(price)s сум\n"
+msgstr "%(amount)s ✖️ %(name)s: %(price)s so'm\n"
 
 #: telegram/utils.py:37
 #, python-format
 msgid "total: %(price)s so'm"
-msgstr "<b>Сумма:</b> %(price)s сум"
-
-#~ msgid "products:\n"
-#~ msgstr "Продукты:\n"
+msgstr "<b>Jami:</b> %(price)s so'm"

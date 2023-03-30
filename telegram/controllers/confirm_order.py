@@ -1,6 +1,7 @@
 from telegram.control import Control, Handler, Displayer
 from telegram import keyboards
 from django.utils.translation import gettext as _
+from datetime import datetime
 
 from telegram.utils import *
 
@@ -29,6 +30,8 @@ class ConfirmOrderHandler(Handler):
             self.user_session.state = 'main_menu'
             self.user_session.save()
             self.order.status = 'pending'
+            self.order.payment_type = self.user_session.payment_method
+            self.order.created_at = datetime.now()
             self.order.save()
             self.reply(_("order_accepted"))
 
@@ -63,5 +66,6 @@ class ConfirmOrderDisplayer(Displayer):
         text += "\n\n"
         text += _("comment %(comment)s") % {
             "comment": self.user_session.comment}
+        text += "\n\n"
         text += _("confirm order")
         self.reply(text, keyboards.confirm_order())

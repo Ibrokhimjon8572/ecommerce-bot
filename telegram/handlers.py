@@ -1,6 +1,7 @@
 from telebot import types
 from .control import bot, Control
 from .controllers import get_handler, get_displayer
+from .controllers.payment_handler import PaymentHandler
 
 
 @bot.message_handler(commands=['start'])
@@ -57,3 +58,9 @@ def handle_location(msg: types.Message):
     control = Control(msg.from_user)
     get_handler(control).handle(msg.location)
     get_displayer(control).show()
+
+
+@bot.message_handler(content_types=['successful_payment'])
+def handle_payment(msg: types.Message):
+    control = Control(msg.from_user)
+    PaymentHandler(control).handle(msg.successful_payment)

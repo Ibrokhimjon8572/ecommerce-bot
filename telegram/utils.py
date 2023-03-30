@@ -40,6 +40,8 @@ def generate_text(items, lang):
 
 @lru_cache
 def get_address(lat, long):
+    if lat is None or long is None:
+        return ""
     try:
         location = geolocator.reverse((lat, long))
         print(location, dir(location))
