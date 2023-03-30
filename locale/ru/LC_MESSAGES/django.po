@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 20:11+0500\n"
+"POT-Creation-Date: 2023-03-30 21:49+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,7 +36,7 @@ msgid "back"
 msgstr "🔙 Назад"
 
 #: telegram/controllers/add_address.py:17 telegram/controllers/categories.py:26
-#: telegram/controllers/confirm_order.py:45
+#: telegram/controllers/confirm_order.py:48
 #: telegram/controllers/main_menu.py:21 telegram/controllers/order.py:27
 #: telegram/controllers/products.py:27
 #: telegram/controllers/select_from_addresses.py:28
@@ -70,9 +70,7 @@ msgstr "Неправильное количество"
 #: telegram/controllers/amount.py:53
 #, python-format
 msgid "%(description)s Price: %(price)d"
-msgstr ""
-"%(description)s\n"
-"Цена %(price)d сум"
+msgstr "%(description)s\n Цена %(price)d сум"
 
 #: telegram/controllers/amount.py:61
 msgid "choose"
@@ -122,42 +120,51 @@ msgstr "Терминал"
 msgid "ask payment"
 msgstr "Выберите способ оплаты"
 
-#: telegram/controllers/confirm_order.py:28 telegram/keyboards.py:117
+#: telegram/controllers/confirm_order.py:29 telegram/keyboards.py:117
 msgid "yes"
 msgstr "Да ✅"
 
-#: telegram/controllers/confirm_order.py:33
+#: telegram/controllers/confirm_order.py:36
 msgid "order_accepted"
 msgstr "Заказ отправлен администраторам"
 
-#: telegram/controllers/confirm_order.py:39 telegram/keyboards.py:117
+#: telegram/controllers/confirm_order.py:42 telegram/keyboards.py:117
 msgid "no"
 msgstr "Нет ❌"
 
-#: telegram/controllers/confirm_order.py:56
+#: telegram/controllers/confirm_order.py:59
 #, python-format
 msgid "address %(address)s"
 msgstr "<b>Адрес:</b> %(address)s"
 
-#: telegram/controllers/confirm_order.py:60
+#: telegram/controllers/confirm_order.py:63
 #, python-format
 msgid "payment_type: %(payment_type)s"
 msgstr "<b>Способ оплаты:</b> %(payment_type)s"
 
-#: telegram/controllers/confirm_order.py:64
+#: telegram/controllers/confirm_order.py:67
 #, python-format
 msgid "comment %(comment)s"
 msgstr "<b>Комментарий к заказу:</b> %(comment)s"
 
-#: telegram/controllers/confirm_order.py:66
+#: telegram/controllers/confirm_order.py:70
 msgid "confirm order"
 msgstr "Подтвердить заказ?"
 
-#: telegram/controllers/group_handler.py:24
+#: telegram/controllers/group_handler.py:28
 msgid "confirmed"
 msgstr "Ваш заказ принят"
 
-#: telegram/controllers/group_handler.py:35
+#: telegram/controllers/group_handler.py:29
+#: telegram/controllers/group_handler.py:38
+msgid "order title"
+msgstr "Ваш заказ"
+
+#: telegram/controllers/group_handler.py:39
+msgid "description"
+msgstr "Ваша общая покупка"
+
+#: telegram/controllers/group_handler.py:55
 msgid "cancelled"
 msgstr "Ваш заказ отменен"
 
@@ -176,6 +183,10 @@ msgstr "Продолжить без геолокации"
 #: telegram/controllers/order.py:22 telegram/keyboards.py:109
 msgid "my addresses"
 msgstr "Мои адреса"
+
+#: telegram/controllers/payment_handler.py:17
+msgid "payment success"
+msgstr ""
 
 #: telegram/controllers/select_from_addresses.py:16 telegram/keyboards.py:153
 msgid "add new address"

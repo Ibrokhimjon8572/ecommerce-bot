@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 20:11+0500\n"
+"POT-Creation-Date: 2023-03-30 21:49+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgid "back"
 msgstr "🔙 Orqaga"
 
 #: telegram/controllers/add_address.py:17 telegram/controllers/categories.py:26
-#: telegram/controllers/confirm_order.py:45
+#: telegram/controllers/confirm_order.py:48
 #: telegram/controllers/main_menu.py:21 telegram/controllers/order.py:27
 #: telegram/controllers/products.py:27
 #: telegram/controllers/select_from_addresses.py:28
@@ -68,9 +68,7 @@ msgstr "Miqdor xato kiritildi"
 #: telegram/controllers/amount.py:53
 #, python-format
 msgid "%(description)s Price: %(price)d"
-msgstr ""
-"%(description)s\n"
-"Narxi: %(price)d so'm"
+msgstr "%(description)s\n Narxi: %(price)d so'm"
 
 #: telegram/controllers/amount.py:61
 msgid "choose"
@@ -120,42 +118,51 @@ msgstr "Terminal"
 msgid "ask payment"
 msgstr "To'lov turini tanlang"
 
-#: telegram/controllers/confirm_order.py:28 telegram/keyboards.py:117
+#: telegram/controllers/confirm_order.py:29 telegram/keyboards.py:117
 msgid "yes"
 msgstr "Ha ✅"
 
-#: telegram/controllers/confirm_order.py:33
+#: telegram/controllers/confirm_order.py:36
 msgid "order_accepted"
 msgstr "Buyurtma administratorlarga jo'natildi"
 
-#: telegram/controllers/confirm_order.py:39 telegram/keyboards.py:117
+#: telegram/controllers/confirm_order.py:42 telegram/keyboards.py:117
 msgid "no"
 msgstr "Yo'q ❌"
 
-#: telegram/controllers/confirm_order.py:56
+#: telegram/controllers/confirm_order.py:59
 #, python-format
 msgid "address %(address)s"
 msgstr "<b>Manzil:</b> %(address)s"
 
-#: telegram/controllers/confirm_order.py:60
+#: telegram/controllers/confirm_order.py:63
 #, python-format
 msgid "payment_type: %(payment_type)s"
 msgstr "<b>To'lov turi:</b> %(payment_type)s"
 
-#: telegram/controllers/confirm_order.py:64
+#: telegram/controllers/confirm_order.py:67
 #, python-format
 msgid "comment %(comment)s"
 msgstr "<b>Izoh:</b> %(comment)s"
 
-#: telegram/controllers/confirm_order.py:66
+#: telegram/controllers/confirm_order.py:70
 msgid "confirm order"
 msgstr "Buyurtmani tasdiqlaysizmi?"
 
-#: telegram/controllers/group_handler.py:24
+#: telegram/controllers/group_handler.py:28
 msgid "confirmed"
 msgstr "Buyurtmangiz tasdiqlandi"
 
-#: telegram/controllers/group_handler.py:35
+#: telegram/controllers/group_handler.py:29
+#: telegram/controllers/group_handler.py:38
+msgid "order title"
+msgstr "Sizning buyurtmangiz"
+
+#: telegram/controllers/group_handler.py:39
+msgid "description"
+msgstr "Sizning umumiy xaridingiz"
+
+#: telegram/controllers/group_handler.py:55
 msgid "cancelled"
 msgstr "Buyurtmangiz bekor qilindi"
 
@@ -174,6 +181,10 @@ msgstr "Geolokatsiyasiz davom etish"
 #: telegram/controllers/order.py:22 telegram/keyboards.py:109
 msgid "my addresses"
 msgstr "Mening manzillarim"
+
+#: telegram/controllers/payment_handler.py:17
+msgid "payment success"
+msgstr ""
 
 #: telegram/controllers/select_from_addresses.py:16 telegram/keyboards.py:153
 msgid "add new address"
