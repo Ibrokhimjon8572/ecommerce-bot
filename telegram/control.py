@@ -46,11 +46,12 @@ class Control:
                          reply_to_message_id=msg and msg.id, parse_mode='html')
 
     def edit_markup(self, message_id, markup, text=None):
-        bot.edit_message_reply_markup(
-            self.user_id, message_id, reply_markup=markup)
         if text is not None:
             bot.edit_message_text(text, self.user_id,
-                                  message_id, parse_mode='html')
+                                  message_id, parse_mode='html', reply_markup=markup)
+        else:
+            bot.edit_message_reply_markup(
+                self.user_id, message_id, reply_markup=markup)
 
 
 class Handler(ABC):
