@@ -2,6 +2,7 @@ from telebot import types
 from .control import bot, Control
 from .controllers import get_handler, get_displayer
 from .controllers.payment_handler import PaymentHandler
+from django.utils.translation import gettext as _
 
 
 @bot.message_handler(commands=['start'])
@@ -58,6 +59,13 @@ def handle_location(msg: types.Message):
     control = Control(msg.from_user)
     get_handler(control).handle(msg.location)
     get_displayer(control).show()
+
+
+@bot.pre_checkout_query_handler(func=lambda query: True)
+def checkout(pre_checkout_query: types.PreCheckoutQuery):
+    control = Control(pre_checkout_query.from_user)
+    control.bot.answer_pre_checkout_query(pre_checkout_query.id, ok=PaymentHandler(control).valid(pre_checkout_query),
+                                          error_message=_("unknown"))
 
 
 @bot.message_handler(content_types=['successful_payment'])

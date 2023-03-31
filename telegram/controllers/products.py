@@ -42,7 +42,7 @@ class ProductsDisplayer(Displayer):
         caption = category.description_ru if self.user.language == 'ru' else category.description_uz
         name = category.name_ru if self.user.language == 'ru' else category.name_uz
         keyboard = keyboards.products_menu(products, self.user.language)
-        if category.image.url:
+        if category.image and category.image.url:
             self.reply_image(
                 self.base_url + category.image.url, caption or name, keyboard)
         else:
