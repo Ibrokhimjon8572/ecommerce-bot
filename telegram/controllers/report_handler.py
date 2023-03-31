@@ -16,12 +16,13 @@ class ReportHandler(Handler):
         worksheet = file.add_worksheet("General report")
 
         header = file.add_format({
+            'bold': True,
         })
         header.set_align('center')
-        # header.set_bg_color("#C0C0C0")
+        header.set_border()
 
-        first_column = file.add_format({
-            # 'bg_color': 'DCDCDC'
+        bordered = file.add_format({
+            'border': 1
         })
 
         worksheet.activate()
@@ -34,7 +35,7 @@ class ReportHandler(Handler):
         products = Product.objects.all()
         row = 2
         for product in products:
-            worksheet.write(row, 0, product.name_uz, first_column)
+            worksheet.write(row, 0, product.name_uz, bordered)
             order_items = product.order_items.order_by('order__created_at').filter(
                 Q(order__status='accepted') | Q(order__status='paid'))
 
@@ -47,14 +48,15 @@ class ReportHandler(Handler):
                 amount += order_item.amount
                 orders += 1
 
-            worksheet.write(row, 1, sales_sum)
-            worksheet.write(row, 2, amount)
-            worksheet.write(row, 3, orders)
+            worksheet.write(row, 1, sales_sum, bordered)
+            worksheet.write(row, 2, amount, bordered)
+            worksheet.write(row, 3, orders, bordered)
             row += 1
 
-            product_worksheet = file.add_worksheet(f"{product.name_uz} report")
+            product_worksheet = file.add_worksheet(
+                f"{product.name_uz} report")
             product_worksheet.activate()
-            product_worksheet.set_column(0, 3, 13)
+            product_worksheet.set_column(0, 3, 15)
 
             product_worksheet.merge_range(
                 0, 0, 0, 3, f"Product report {product.name_uz}", header)
@@ -64,13 +66,13 @@ class ReportHandler(Handler):
 
             for order_item in order_items:
                 product_worksheet.write(
-                    product_row, 0, order_item.order.user.phone, first_column)
+                    product_row, 0, order_item.order.user.phone, bordered)
                 product_worksheet.write(
-                    product_row, 1, order_item.order.created_at.strftime("%d.%m.%y"))
+                    product_row, 1, order_item.order.created_at.strftime("%d.%m.%y"), bordered)
                 product_worksheet.write(
-                    product_row, 2, order_item.amount*order_item.price)
+                    product_row, 2, order_item.amount*order_item.price, bordered)
                 product_worksheet.write(
-                    product_row, 3, order_item.amount)
+                    product_row, 3, order_item.amount, bordered)
                 product_row += 1
             worksheet.activate()
 
