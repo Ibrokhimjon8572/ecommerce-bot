@@ -13,6 +13,7 @@ STATE_CHOICES = (
     ('pending', 'pending'),
     ('accepted', 'accepted'),
     ('cancelled', 'cancelled'),
+    ('paid', 'paid')
 )
 
 PAYMENT_CHOICES = (

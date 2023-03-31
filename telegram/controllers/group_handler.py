@@ -37,7 +37,7 @@ class GroupHandler(Handler):
                 order.user.user_id,
                 _("order title"),
                 _("description"),
-                f"{cq.message.id}",
+                f"{cq.message.id} {order_id}",
                 provider_token=token,
                 currency="UZS",
                 prices=prices,
