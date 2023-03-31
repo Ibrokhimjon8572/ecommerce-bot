@@ -60,9 +60,8 @@ def handle_callback_query(cq: types.CallbackQuery):
 
     old_state = control.user_session.state
     get_handler(control).handle(cq.data, cq.message.id)
-    if control.user_session.state != old_state:
-        bot.delete_message(cq.message.chat.id, cq.message.id)
-        get_displayer(control).show()
+    bot.delete_message(cq.message.chat.id, cq.message.id)
+    get_displayer(control).show()
 
 
 @bot.message_handler(content_types=['location'])
