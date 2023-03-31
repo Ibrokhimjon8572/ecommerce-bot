@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from .handlers import bot
 import os
+import logging
 
 # Create your views here.
 
@@ -37,5 +38,8 @@ def index(request: HttpRequest):
     if request.method == 'POST':
         update = telebot.types.Update.de_json(
             request.body.decode("utf-8"))
-        bot.process_new_updates([update])
+        try:
+            bot.process_new_updates([update])
+        except Exception as e:
+            logging.error(e)
         return HttpResponse(status=200)
