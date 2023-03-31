@@ -47,7 +47,7 @@ class Control:
 
     def edit_markup(self, message_id, markup, text=None):
         bot.edit_message_reply_markup(
-            self.user_id, message_id, reply_markup=markup, parse_mode='html')
+            self.user_id, message_id, reply_markup=markup)
         if text is not None:
             bot.edit_message_text(text, self.user_id,
                                   message_id, parse_mode='html')
