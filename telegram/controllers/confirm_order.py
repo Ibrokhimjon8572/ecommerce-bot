@@ -61,7 +61,7 @@ class ConfirmOrderDisplayer(Displayer):
         text += generate_text(self.order.order_items.all(), self.user.language)
         text += "\n"
         text += _("payment_type: %(payment_type)s") % {
-            "payment_type": self.user_session.payment_method
+            "payment_type": _(self.user_session.payment_method)
         }
         text += "\n\n"
         text += _("comment %(comment)s") % {
