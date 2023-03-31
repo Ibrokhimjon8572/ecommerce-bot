@@ -1,8 +1,10 @@
 from telebot import types
-from .control import bot, Control
+from .control import bot, Control, ADMIN_GROUP
 from .controllers import get_handler, get_displayer
 from .controllers.payment_handler import PaymentHandler
+from .controllers.report_handler import ReportHandler
 from django.utils.translation import gettext as _
+import logging
 
 
 @bot.message_handler(commands=['start'])
@@ -16,6 +18,15 @@ def handle_start(msg: types.Message):
     control.user_session.save()
     get_handler(control).handle(msg.text)
     get_displayer(control).show()
+
+
+@bot.message_handler(commands=['report'])
+def handle_report(msg: types.Message):
+    if str(msg.chat.id) != ADMIN_GROUP:
+        logging.error(msg)
+        return
+    control = Control(msg.from_user)
+    ReportHandler(control).handle(msg)
 
 
 @bot.message_handler(content_types=['contact'])

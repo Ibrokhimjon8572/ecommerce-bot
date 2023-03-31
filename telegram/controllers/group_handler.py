@@ -27,9 +27,9 @@ class GroupHandler(Handler):
             translation.activate(order.user.language)
             bot.send_message(order.user.user_id, _('confirmed'))
             prices = [types.LabeledPrice(_("order title"), order.amount()*100)]
-            if order.payment_type == "click":
+            if order.payment_type == "click" and CLICK_TOKEN:
                 token = CLICK_TOKEN
-            elif order.payment_type == "payme":
+            elif order.payment_type == "payme" and PAYME_TOKEN:
                 token = PAYME_TOKEN
             else:
                 return
