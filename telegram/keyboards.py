@@ -81,7 +81,7 @@ def basket_keyboard(items: list[OrderItem], lang):
         name = item.product.name_uz if lang == 'uz' else item.product.name_ru
         buttons.append(types.InlineKeyboardButton(
             _("delete %(name)s") % {"name": name},
-            callback_data=f"delete__{name}"
+            callback_data=f"delete__{item.id}"
         ))
 
     markup = types.InlineKeyboardMarkup()

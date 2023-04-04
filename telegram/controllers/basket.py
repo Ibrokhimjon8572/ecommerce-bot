@@ -4,7 +4,6 @@ from django.utils.translation import gettext as _
 import logging
 from order.models import OrderItem
 from telebot import types
-from django.db.models import Q
 from telegram.utils import *
 
 
@@ -30,10 +29,9 @@ class BasketHandler(Handler):
                 order_item.delete()
             return
         if text.startswith("delete_"):
-            product_name = text[8:]
-            logging.error(product_name)
-            self.order.order_items.get(
-                Q(product__name_uz=product_name) | Q(product__name_ru=product_name)).delete()
+            product_id = text[8:]
+            logging.error(product_id)
+            self.order.order_items.get(product__id=product_id).delete()
         order_items = self.order.order_items.all()
         if len(order_items):
             self.edit_markup(message_id, keyboards.basket_keyboard(
