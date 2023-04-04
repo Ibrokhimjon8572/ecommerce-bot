@@ -188,7 +188,7 @@ msgstr "Мои адреса"
 
 #: telegram/controllers/payment_handler.py:17
 msgid "payment success"
-msgstr ""
+msgstr "Оплата прошла успешно"
 
 #: telegram/controllers/select_from_addresses.py:16 telegram/keyboards.py:153
 msgid "add new address"
