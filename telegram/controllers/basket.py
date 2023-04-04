@@ -29,9 +29,9 @@ class BasketHandler(Handler):
                 order_item.delete()
             return
         if text.startswith("delete_"):
-            product_id = text[8:]
-            logging.error(product_id)
-            self.order.order_items.get(product__id=product_id).delete()
+            id = text[8:]
+            logging.error(id)
+            self.order.order_items.get(id=id).delete()
         order_items = self.order.order_items.all()
         if len(order_items):
             self.edit_markup(message_id, keyboards.basket_keyboard(
