@@ -10,6 +10,7 @@ class MainMenuHandler(Handler):
     def handle(self, text, message_id=None):
         if text == _("orders"):
             self.user_session.state = 'categories'
+            self.user_session.category = None
             self.user_session.save()
         elif text == _("basket"):
             self.user_session.state = 'basket'

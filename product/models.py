@@ -10,6 +10,9 @@ class Category(models.Model):
                           primary_key=True, editable=False)
     name_uz = models.CharField(null=True, max_length=50)
     name_ru = models.CharField(null=True, max_length=50)
+    parent = models.ForeignKey(
+        'self', blank=True, null=True, related_name='child', on_delete=models.SET_NULL)
+    is_product_category = models.BooleanField()
     description_uz = models.TextField(
         null=True, blank=True, max_length=300, verbose_name="Description in Uzbek")
     description_ru = models.TextField(
@@ -23,7 +26,12 @@ class Category(models.Model):
         return mark_safe(f'<img src = "{self.image.url}" style="width: 100%" />')
 
     def __str__(self):
-        return self.name_uz
+        full_path = [self.name_uz]
+        k = self.parent
+        while k is not None:
+            full_path.append(k.name_uz)
+            k = k.parent
+        return ' -> '.join(full_path[::-1])
 
 
 class Product(models.Model):
@@ -44,4 +52,7 @@ class Product(models.Model):
         return mark_safe(f'<img src = "{self.image.url}" style="width: 100%" />')
 
     def __str__(self):
-        return self.name_uz
+        if self.category:
+            return f'{self.category} > {self.name_uz}'
+        else:
+            return self.name_uz

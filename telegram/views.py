@@ -13,7 +13,7 @@ import logging
 
 @csrf_exempt
 def set_webhook(request: HttpRequest):
-    if os.getenv("ENVIRONMENT") != "dev":
+    if os.getenv("ENVIRONMENT", 'dev') != "dev":
         return JsonResponse(status=400, data={
             'status': False,
             'message': 'Allowed only in development',
