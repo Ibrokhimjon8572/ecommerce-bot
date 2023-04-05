@@ -7,6 +7,8 @@ services:
       - .env
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 6432:5432
   web:
     build:
       context: .
