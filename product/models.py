@@ -26,12 +26,9 @@ class Category(models.Model):
         return mark_safe(f'<img src = "{self.image.url}" style="width: 100%" />')
 
     def __str__(self):
-        full_path = [self.name_uz]
-        k = self.parent
-        while k is not None:
-            full_path.append(k.name_uz)
-            k = k.parent
-        return ' -> '.join(full_path[::-1])
+        if self.parent:
+            return f'{self.parent} > {self.name_uz}'
+        return self.name_uz
 
 
 class Product(models.Model):
@@ -54,5 +51,4 @@ class Product(models.Model):
     def __str__(self):
         if self.category:
             return f'{self.category} > {self.name_uz}'
-        else:
-            return self.name_uz
+        return self.name_uz
