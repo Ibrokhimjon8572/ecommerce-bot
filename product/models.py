@@ -40,7 +40,7 @@ class Product(models.Model):
         null=True, blank=True, max_length=300, verbose_name="Description in Uzbek")
     description_ru = models.TextField(
         null=True, blank=True, max_length=300, verbose_name="Description in Russian")
-    price = models.IntegerField(null=False, default=0)
+    price = models.IntegerField(null=False)
     category = models.ForeignKey(
         Category, related_name='products', on_delete=models.CASCADE)
     image = models.ImageField(blank=True, null=True)
