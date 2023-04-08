@@ -18,6 +18,8 @@ class CategoriesHandler(Handler):
                 self.user_session.save()
                 return
             self.user_session.category = self.user_session.category.parent
+            self.user_session.save()
+            return
         if text == _("basket"):
             self.user_session.state = 'basket'
             self.user_session.save()
@@ -43,10 +45,16 @@ class CategoriesDisplayer(Displayer):
         super().__init__(control)
 
     def show(self):
-        if self.user_session.category:
+        category = self.user_session.category
+        if category:
             categories = Category.objects.filter(
-                parent=self.user_session.category)
+                parent=category)
         else:
             categories = Category.objects.filter(parent=None)
+        if category and category.image and category.image.url:
+            caption = category.description_ru if self.user.language == 'ru' else category.description_uz
+            name = category.name_ru if self.user.language == 'ru' else category.name_uz
+            self.reply_image(
+                self.base_url + category.image.url, caption or name)
         self.reply(_("categories"), keyboards.categories_menu(
             categories, self.user.language))
