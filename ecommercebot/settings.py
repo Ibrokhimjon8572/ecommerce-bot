@@ -143,5 +143,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'storage/media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-BOT_TOKEN = os.getenv('BOT_TOKEN')
+# BOT_TOKEN = os.getenv('BOT_TOKEN')
+BOT_TOKEN = "5894861044:AAESyfvjd-ywQCIxWeTOIOzDDP6523Lmo7k"
 ADMIN_GROUP = os.getenv("ADMIN_GROUP")
