@@ -25,7 +25,7 @@ class CategoriesHandler(Handler):
             self.user_session.save()
             return
         category = Category.objects.filter(
-            Q(name_uz=text) | Q(name_ru=text)).first()
+            Q(parent=self.user_session.category) & (Q(name_uz=text) | Q(name_ru=text))).first()
         if category is None:
             self.reply(_("unknown"))
             return
