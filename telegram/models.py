@@ -42,7 +42,7 @@ class User(models.Model):
                           primary_key=True, unique=True, editable=False)
     language = models.CharField(
         max_length=2, null=False, default='uz', choices=LANGUAGE_CHOICES)
-    user_id = models.IntegerField(null=False, unique=True)
+    user_id = models.BigIntegerField(null=False, unique=True)
     username = models.CharField(max_length=50, null=True, blank=True)
     phone = models.CharField(max_length=20, null=True, blank=False)
     name = models.CharField(max_length=30, null=True, blank=False)
